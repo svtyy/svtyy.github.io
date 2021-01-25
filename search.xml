@@ -15,9 +15,13 @@
 ]]></content>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2021/01/22/test/</url>
-    <content><![CDATA[]]></content>
+    <title>hexo博客</title>
+    <url>/2021/01/25/hexo%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>s对于一个工科人来说，GitHub跟hexo建博客还比较容易，同步备份源码就好麻烦。。都不知道是什么意思。。</p>
+]]></content>
+      <tags>
+        <tag>建站</tag>
+      </tags>
   </entry>
   <entry>
     <title>设计笔记</title>
@@ -27,6 +31,11 @@
       <tags>
         <tag>设计</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/01/22/test/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>足球</title>
