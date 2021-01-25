@@ -1,54 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2021/01/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>hexo博客</title>
-    <url>/2021/01/25/hexo%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>s对于一个工科人来说，GitHub跟hexo建博客还比较容易，同步备份源码就好麻烦。。都不知道是什么意思。。</p>
-]]></content>
-      <tags>
-        <tag>建站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>设计笔记</title>
     <url>/2021/01/25/%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>s设计</p>
+    <content><![CDATA[<ul>
+<li>首开跟示范区开放之前的活只能是不计成本了，适当考虑就行。以高周转的开发节奏，实际上时间根本不允许。要完成首开和示范区开放，得三部门同心协力才能完成，不顾其他死活的，都完不成。</li>
+<li>基础需要调查本地的常用桩型，本地没做过的没必要去冒险。特别是大型房开的做法，经济、安全都有先例。</li>
+<li>基础方案确定：拿到初勘报告后，尽快组织设计院出具方案，经成本测算，再组织基础方案论证会。可以先联系专家，了解常用桩型和常规做法。不能让设计院拍脑袋就决定用什么基础类型。</li>
+<li>住宅户型相近，仔细核对各层结构做法是否一致，关注板厚、配筋方式，居然出线同一户型板厚不同的问题；结构开洞是否满足其他专业的需求，可以出一个标准层的开洞图。</li>
+<li>多跟其他项目联系，了解其他项目是怎么做法，有了先例就可以做。最近发现这样的联系少了。。</li>
+<li>屋面机房层高普遍不足，而且要反复发变更，感觉就没审过图。</li>
+<li>基础位置原来是鱼塘，设计基础的时候居然漏看了。</li>
+<li>关注主次力店的门开口是否满足要求，需两跨并满足消防要求。</li>
+<li>LED屏的提资图注意别漏了屏内检修空间的照明、烟感、温感与慧云点位的联接</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
       <tags>
         <tag>设计</tag>
       </tags>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2021/01/22/test/</url>
-    <content><![CDATA[]]></content>
+    <title>家庭</title>
+    <url>/2021/01/25/%E5%AE%B6%E5%BA%AD/</url>
+    <content><![CDATA[<p>女儿一天天长大，似乎现在你说什么她都知道，但是你想逆她的意愿就比较难了，会装哭来忽悠你。太小又打不了，这个阶段真不知道该怎么引导她。教育是一个很麻烦的事情，特别是我们这样一个生活环境。太多我们能买来了便捷，或者是我们越来越懒了。1岁5个月27天</p>
+]]></content>
+      <categories>
+        <category>家庭</category>
+      </categories>
+      <tags>
+        <tag>家庭</tag>
+      </tags>
   </entry>
   <entry>
     <title>足球</title>
     <url>/2021/01/24/%E8%B6%B3%E7%90%83/</url>
-    <content><![CDATA[<p>​        足球应该是我最喜欢的运动的，还记得小学五年级快要毕业的时候，在操场上用篮球来踢，那算是第一次接触“足球”。也许这就是缘分，上了初一之后就开始踢球了。</p>
+    <content><![CDATA[<p>​        足球应该是我最喜欢的运动的，还记得小学五年级快要毕业的时候，在操场上用篮球来踢，那算是第一次接触“足球”。也许这就是缘分，上了初一之后就开始踢球了。<a id="more"></a></p>
+<ul>
+<li><p>好久没看英超了，阿森纳都那么多长没赢了。难得看下，终于赢了，而且赢的是车子，感觉就是不一样。全场看来精神状态不一样了，对于足球比赛来说，没有斗志是很难看的。成年球星的动力跟年轻的是不一样。</p>
+</li>
+<li><p>今年一整年都是忙，都没有什么时间踢球，一年就踢了2次。本以为回到老家了，可以工作轻松点，还能踢踢球，结果刚好相反，工作忙到不得了，体育运动还没得怎么样。。当然了，就去踢的那么两次，也是体力完全透支，体会到什么叫10分钟体力了。上场站几分钟都觉得累那种。</p>
+</li>
+<li><p>想起几年前在宁波的日子，周末基本有球踢，那是潇洒。但是这种代价是相互的，每个人都时间都是一样的，在一件事情是耗费的时间多了，另外的事就没有那么多精力了。所谓得失是平衡的，凡事得适度。人生的每个阶段都有不同的侧重点，没办法苛求那么多。</p>
+</li>
+<li><p>上周末去南宁参加积极运动年赛，想起来2020年就踢了2次，上次踢球好像都是半年前的事了。结果，这秋踢得浑身疼痛，走路都麻烦。但是感觉人的精神好多了，没有之前那么精神萎靡的样子，看来还是需要多运动才行。</p>
+</li>
+</ul>
 ]]></content>
+      <categories>
+        <category>体育</category>
+      </categories>
       <tags>
-        <tag>体育</tag>
+        <tag>足球</tag>
       </tags>
   </entry>
   <entry>
-    <title>test 2</title>
-    <url>/2021/01/25/test-2/</url>
+    <title>hexo建站及多终端同步</title>
+    <url>/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<p>上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。<a id="more"></a></p>
+<p>可能还是有强迫症，脑子里一直有这个声音，不完成不罢休。所以干脆重新做了。这次终于成功备份到私有仓库。中间经历的非常多的错误，如取消远程关联、切换分支、主题没有备份等等，也许对专业的人来说太简单的问题了，但对我来说就是天书一样。还好有强大的Google，不断的查找答案，不断的修正，终于搞定。</p>
+]]></content>
+      <categories>
+        <category>网站搭建</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“番茄”那一点点事</title>
+    <url>/2021/01/25/%E2%80%9C%E7%95%AA%E8%8C%84%E2%80%9D%E9%82%A3%E4%B8%80%E7%82%B9%E7%82%B9%E4%BA%8B/</url>
+    <content><![CDATA[<ul>
+<li>自由访问Google的日子真是嗨，可惜了退出了国内市场。在国内也是够挣扎的。能活着真是不容易，即使再怎么用心也是没有用的，在利益面前一切都是浮云。。百度真是渣渣，而且还额度。。</li>
+<li>好长一段时间用黑莓手机，偶然的机会看到iqlink，保持着一直可以访问Google，好像使用黑莓也只能用iqlink。但是速度实在不敢恭维，这持续了好几年。直到19年偶然机会看到了“庭说”，才知道还有机场，用了一下，速度真的是飞起来，比iqlink快太多了。可以畅快的使用Google、gmail等等应用。更重要的是可以搜索都更多有用的应用。</li>
+<li>再后来就发现了一键部署这个事了。。</li>
+<li>发现自己跑偏了，如果没有那堵墙该多好，不用那么多工具。但是生活就是这样无奈的，接受当下的一切，活在当下才是真的。即使吃了番茄出了海，也不见得怎么样，学习才是最重要的。理性的分辨不同的声音。</li>
+<li>谷歌云真的是快啊，台湾的节点速度刚刚的，4k秒开。就是除了免费的体验，价格实在太高了，目前这个节点实在是用不上。</li>
+<li>既然已经跑出来了，那就用telegraph呗。使用方法<a href="https://tingtalk.me/telegram/%EF%BC%8C%E5%BE%88%E8%AF%A6%E7%BB%86%E3%80%82%E6%88%91%E6%84%9F%E8%A7%89%E6%88%91%E6%98%AF%E7%9C%8B%E4%BA%86%E5%BA%AD%E8%AF%B4%E4%B9%8B%E5%90%8E%E6%89%8D%E6%84%9F%E8%A7%89%E6%98%AF%E8%B7%91%E5%87%BA%E6%9D%A5%E6%98%AF%E6%9C%89%E6%84%8F%E6%80%9D%E7%9A%84%E3%80%82">https://tingtalk.me/telegram/，很详细。我感觉我是看了庭说之后才感觉是跑出来是有意思的。</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>番茄</category>
+      </categories>
+      <tags>
+        <tag>番茄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>陪伴让我们共同成长</title>
+    <url>/2021/01/25/%E9%99%AA%E4%BC%B4%E8%AE%A9%E6%88%91%E4%BB%AC%E5%85%B1%E5%90%8C%E6%88%90%E9%95%BF/</url>
+    <content><![CDATA[<p>快半个多月了，周末都是阴天又冷，都没办法出门，这周总算可以出去了，带女儿出去玩。家人待在一起的感觉真好，其中会增加很多的思考，究竟我们需要什么。不应该是等着生活来催我们去做什么，得计划着去做什么。变被动为主动，心里的压力就会小一些。孩子的成长需要我们的陪伴，其实也是我们自己在成长，第一次做父母，谁知道会是怎么样的？但求孩子健康成长。<a id="more"></a></p>
+]]></content>
+      <categories>
+        <category>成长</category>
+      </categories>
+      <tags>
+        <tag>成长</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/01/25/test/</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
