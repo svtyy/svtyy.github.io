@@ -22,6 +22,126 @@
       </tags>
   </entry>
   <entry>
+    <title>hexo建站及多终端同步</title>
+    <url>/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<p>上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。<a id="more"></a></p>
+<p>可能还是有强迫症，脑子里一直有这个声音，不完成不罢休。所以干脆重新做了。这次终于成功备份到私有仓库。中间经历的非常多的错误，如取消远程关联、切换分支、主题没有备份等等，也许对专业的人来说太简单的问题了，但对我来说就是天书一样。还好有强大的Google，不断的查找答案，不断的修正，终于搞定。</p>
+<p>这显然不是什么教程，只是我不断的试错之后得到的属于我个人的总结，只是不希望以后遇到什么需要重新来过的时候，又满网络去Google。我太难了。。。</p>
+<h3 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><ol>
+<li>安装必备环境：</li>
+</ol>
+<ul>
+<li>安装git：<a href="https://git-scm.com/%EF%BC%8C%E5%B0%86%E5%85%B6%E4%B8%8B%E8%BD%BD%EF%BC%8C%E7%84%B6%E5%90%8EWindows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%97%A0%E8%84%91%E5%BC%8F%E5%AE%89%E8%A3%85%EF%BC%88%E4%B8%80%E8%B7%AFenter%E5%88%B0%E5%BA%95%EF%BC%89%E3%80%82%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E6%89%93%E5%BC%80cmd%E7%BB%88%E7%AB%AF%EF%BC%88win+r">https://git-scm.com/，将其下载，然后Windows系统下无脑式安装（一路enter到底）。安装好后打开cmd终端（win+r</a> -&gt; 输入cmd -&gt; 回车），执行<code>git --version</code>，若出现<code>git version 2.19.2.windows.1</code>之类的版本输出，就表示已经成功安装。<ul>
+<li>安装node.js：<a href="https://nodejs.org/zh-cn/%EF%BC%8Cnode.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8CGit%E7%9A%84%E5%AE%89%E8%A3%85%E5%A6%82%E5%87%BA%E4%B8%80%E8%BE%99%EF%BC%8C%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E5%9C%A8cmd%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%60node">https://nodejs.org/zh-cn/，node.js的安装和Git的安装如出一辙，安装好后在cmd终端使用`node</a> -version<code>命令，如出现</code>v12.20.1<code>类似输出，则说明已经成功安装。（安装</code>v12.20.1`可以减少一点麻烦）</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><p>创建仓库：</p>
+<ul>
+<li>注册 <code>GitHub：github.com</code> 。</li>
+<li>创建仓库，一般形式为：xxx.github.io。xxx用GitHub的用户名。勾选是否为仓库生成一个readme.md文件。</li>
+<li>点击<code>create repository</code> 完成生成仓库。</li>
+</ul>
+</li>
+<li><p>创建密钥及部署证书：在任意位置鼠标右键选择<code>git bash here</code>，然后在git终端执行以下命令：</p>
+<ul>
+<li>git config –global user.name XXX   # XXX表示github注册时的用户名。</li>
+<li>git config –global user.email XXX  # XXX表示github注册时的邮箱。</li>
+<li>ssh-keygen -t rsa -C <a href="mailto:&#88;&#x58;&#88;&#x40;&#88;&#x58;&#x58;&#46;&#99;&#111;&#x6d;">&#88;&#x58;&#88;&#x40;&#88;&#x58;&#x58;&#46;&#99;&#111;&#x6d;</a> # <a href="mailto:&#88;&#88;&#88;&#x40;&#x58;&#x58;&#x58;&#46;&#99;&#x6f;&#x6d;">&#88;&#88;&#88;&#x40;&#x58;&#x58;&#x58;&#46;&#99;&#x6f;&#x6d;</a>指的是注册github时候使用的邮箱。</li>
+<li>在命令执行的时候回有一些yes、no的选择，直接默认回车。之后将在c/Users/you/.ssh/id_rsa.pub路径文件看到生成的秘钥对，用记事本打开，之后复制。</li>
+<li>将ssh key添加到我们的github账户。在个人github主页找到settings，然后点击SSH and GPG keys，之后再出现的页面的中点击New SSH key。名字随意，将复制到的id_rsa.pub粘贴到key，点击Add SSH key即可。</li>
+<li>检查证书是否配置成功：打开git bash here，执行ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a></li>
+</ul>
+<p>以上即完成基本环境的布置，接下来就是hexo博客的搭建了。</p>
+</li>
+</ol>
+<h4 id="hexo搭建-1"><a href="#hexo搭建-1" class="headerlink" title="hexo搭建"></a>hexo搭建</h4><ul>
+<li><p>首先安装Hexo。根据需要在磁盘中创建一个名为hexo文件夹。之后进入该文件并在当前路径下打开git bash here，依次运行如下命令来进行搭建hexo环境：</p>
+<ol>
+<li>npm install hexo-cli -g</li>
+<li>npm install hexo –save</li>
+</ol>
+</li>
+<li><p>执行Hexo –version，出现一堆的版本信息说明就配置成功了。</p>
+</li>
+<li><p>初始化hexo：hexo init。</p>
+</li>
+<li><p>网站所需组件：npm install。</p>
+<p>稍等片刻即可完成所有的安装步骤，至此，一个基本的Hexo博客框架已经完成了，现在只需要最后一步了：导入喜欢的博客主题即可正常使用了。本人喜欢next主题，所以。。。</p>
+</li>
+</ul>
+<h4 id="导入主题"><a href="#导入主题" class="headerlink" title="导入主题"></a>导入主题</h4><ul>
+<li><p>在hexo文件夹下，右键点击git bash here，并执行如下命令：git clone <a href="https://github.com/theme-next/hexo-theme-next.git%E3%80%82">https://github.com/theme-next/hexo-theme-next.git。</a></p>
+</li>
+<li><p>用文本编辑器编辑网站配置文件_config.yml，将theme改为next。</p>
+</li>
+<li><p>操作完成之后，完成如下三步命令：</p>
+<ol>
+<li>hexo clean：清除缓存</li>
+<li>hexo g：生成静态页面</li>
+<li>hexo s：本地预览页面</li>
+<li>hexo d：将资源提交到服务器中</li>
+</ol>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>安装环境变量及配置。</li>
+<li>创建GitHub仓库。</li>
+<li>配置证书。</li>
+<li>部署hexo。</li>
+<li>导入自己喜欢的主题。</li>
+</ol>
+<h3 id="多终端同步"><a href="#多终端同步" class="headerlink" title="多终端同步"></a>多终端同步</h3><p>为了源码安全及写作方便，多终端同步是有必要的。搜索了很多方法，说的最多的是设置分支的方法，总感觉差那么一点意思。后来发现创建私有仓库的方法，这也是之前放弃的原因，太难了。。还好经过不断的摸索，总算解决了。。</p>
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><ul>
+<li><p>跟之前建站的时候一样，只是改为私有，名称为hexo，其他默认。得到仓库地址：git@github:xxx/hexo.git。执行以上命令之前，先把主题文件夹下的.git文件夹删除（可能隐藏），我就因为没有删除有折腾了N久。</p>
+</li>
+<li><p>在本地hexo仓库下执行：git remote add origin <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#x6f;&#x6d;</a>:xxx/hexo.git</p>
+</li>
+<li><p>执行：git remote -v，查看仓库是否连接成功。</p>
+</li>
+<li><p>执行：git commit -m “first commit”</p>
+</li>
+<li><p>执行：git branch -M master</p>
+</li>
+<li><p>执行：git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;</a>:svtyy/hexo.git</p>
+</li>
+<li><p>执行：git push -u origin master</p>
+</li>
+</ul>
+<p>完成以上操作应该会把源码推送到远程仓库了。</p>
+<ul>
+<li>解除关联远程分支：git remote remove origin</li>
+</ul>
+<h4 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h4><p>换台电脑的时候就可以从远程仓库直接克隆下来，实现多终端操作。</p>
+<ul>
+<li>在本地想要存放仓库的位置执行：git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:xxx/hexo.git</li>
+</ul>
+<h4 id="终端同步"><a href="#终端同步" class="headerlink" title="终端同步"></a>终端同步</h4><ul>
+<li>任意终端完成修改后：</li>
+</ul>
+<ol>
+<li>hexo clean </li>
+<li>hexo g    </li>
+<li>hexo s    </li>
+<li>hexo d    </li>
+<li>git add .   </li>
+<li>git commit -m “更新源文件” </li>
+<li>git push origin master </li>
+<li>git pull origin master </li>
+</ol>
+<p>我的就是这样完成了搭建和多终端同步，不知道是不是任何时候都可以按照做完成，也不知道是不是可以省略掉哪些步骤，或者还有哪里是可以完善的，只能靠以后不断的摸索了。当然，那不是我的初衷，我只是想用这个工具，懂得操作就行，它是怎么运作，原理是什么关心不上了。在这个过程中，参考了非常多的博文，十分感谢！</p>
+<p>​      </p>
+<p>​     </p>
+]]></content>
+      <categories>
+        <category>网站搭建</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Github Actions自动部署博客</title>
     <url>/2021/01/27/Github%20Actions%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>居然自动部署成功了，突然觉得好有成就感啊。我觉得我好容易满足啊，真正体会什么是知足常乐，是不是也算是小确幸。开心还是得发自内心的。</p>
@@ -78,126 +198,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo建站及多终端同步</title>
-    <url>/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<p>上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。<a id="more"></a></p>
-<p>可能还是有强迫症，脑子里一直有这个声音，不完成不罢休。所以干脆重新做了。这次终于成功备份到私有仓库。中间经历的非常多的错误，如取消远程关联、切换分支、主题没有备份等等，也许对专业的人来说太简单的问题了，但对我来说就是天书一样。还好有强大的Google，不断的查找答案，不断的修正，终于搞定。</p>
-<p>这显然不是什么教程，只是我不断的试错之后得到的属于我个人的总结，只是不希望以后遇到什么需要重新来过的时候，又满网络去Google。我太难了。。。</p>
-<h3 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><ol>
-<li>安装必备环境：</li>
-</ol>
-<ul>
-<li>安装git：<a href="https://git-scm.com/%EF%BC%8C%E5%B0%86%E5%85%B6%E4%B8%8B%E8%BD%BD%EF%BC%8C%E7%84%B6%E5%90%8EWindows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%97%A0%E8%84%91%E5%BC%8F%E5%AE%89%E8%A3%85%EF%BC%88%E4%B8%80%E8%B7%AFenter%E5%88%B0%E5%BA%95%EF%BC%89%E3%80%82%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E6%89%93%E5%BC%80cmd%E7%BB%88%E7%AB%AF%EF%BC%88win+r">https://git-scm.com/，将其下载，然后Windows系统下无脑式安装（一路enter到底）。安装好后打开cmd终端（win+r</a> -&gt; 输入cmd -&gt; 回车），执行<code>git --version</code>，若出现<code>git version 2.19.2.windows.1</code>之类的版本输出，就表示已经成功安装。<ul>
-<li>安装node.js：<a href="https://nodejs.org/zh-cn/%EF%BC%8Cnode.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8CGit%E7%9A%84%E5%AE%89%E8%A3%85%E5%A6%82%E5%87%BA%E4%B8%80%E8%BE%99%EF%BC%8C%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E5%9C%A8cmd%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%60node">https://nodejs.org/zh-cn/，node.js的安装和Git的安装如出一辙，安装好后在cmd终端使用`node</a> -version<code>命令，如出现</code>v12.20.1<code>类似输出，则说明已经成功安装。（安装</code>v12.20.1`可以减少一点麻烦）</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li><p>创建仓库：</p>
-<ul>
-<li>注册 <code>GitHub：github.com</code> 。</li>
-<li>创建仓库，一般形式为：xxx.github.io。xxx用GitHub的用户名。勾选是否为仓库生成一个readme.md文件。</li>
-<li>点击<code>create repository</code> 完成生成仓库。</li>
-</ul>
-</li>
-<li><p>创建密钥及部署证书：在任意位置鼠标右键选择<code>git bash here</code>，然后在git终端执行以下命令：</p>
-<ul>
-<li>git config –global user.name XXX   # XXX表示github注册时的用户名。</li>
-<li>git config –global user.email XXX  # XXX表示github注册时的邮箱。</li>
-<li>ssh-keygen -t rsa -C <a href="mailto:&#x58;&#x58;&#x58;&#64;&#88;&#x58;&#x58;&#46;&#x63;&#111;&#x6d;">&#x58;&#x58;&#x58;&#64;&#88;&#x58;&#x58;&#46;&#x63;&#111;&#x6d;</a> # <a href="mailto:&#88;&#x58;&#88;&#64;&#88;&#x58;&#88;&#x2e;&#x63;&#111;&#109;">&#88;&#x58;&#88;&#64;&#88;&#x58;&#88;&#x2e;&#x63;&#111;&#109;</a>指的是注册github时候使用的邮箱。</li>
-<li>在命令执行的时候回有一些yes、no的选择，直接默认回车。之后将在c/Users/you/.ssh/id_rsa.pub路径文件看到生成的秘钥对，用记事本打开，之后复制。</li>
-<li>将ssh key添加到我们的github账户。在个人github主页找到settings，然后点击SSH and GPG keys，之后再出现的页面的中点击New SSH key。名字随意，将复制到的id_rsa.pub粘贴到key，点击Add SSH key即可。</li>
-<li>检查证书是否配置成功：打开git bash here，执行ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;">&#103;&#105;&#x74;&#64;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;</a></li>
-</ul>
-<p>以上即完成基本环境的布置，接下来就是hexo博客的搭建了。</p>
-</li>
-</ol>
-<h4 id="hexo搭建-1"><a href="#hexo搭建-1" class="headerlink" title="hexo搭建"></a>hexo搭建</h4><ul>
-<li><p>首先安装Hexo。根据需要在磁盘中创建一个名为hexo文件夹。之后进入该文件并在当前路径下打开git bash here，依次运行如下命令来进行搭建hexo环境：</p>
-<ol>
-<li>npm install hexo-cli -g</li>
-<li>npm install hexo –save</li>
-</ol>
-</li>
-<li><p>执行Hexo –version，出现一堆的版本信息说明就配置成功了。</p>
-</li>
-<li><p>初始化hexo：hexo init。</p>
-</li>
-<li><p>网站所需组件：npm install。</p>
-<p>稍等片刻即可完成所有的安装步骤，至此，一个基本的Hexo博客框架已经完成了，现在只需要最后一步了：导入喜欢的博客主题即可正常使用了。本人喜欢next主题，所以。。。</p>
-</li>
-</ul>
-<h4 id="导入主题"><a href="#导入主题" class="headerlink" title="导入主题"></a>导入主题</h4><ul>
-<li><p>在hexo文件夹下，右键点击git bash here，并执行如下命令：git clone <a href="https://github.com/theme-next/hexo-theme-next.git%E3%80%82">https://github.com/theme-next/hexo-theme-next.git。</a></p>
-</li>
-<li><p>用文本编辑器编辑网站配置文件_config.yml，将theme改为next。</p>
-</li>
-<li><p>操作完成之后，完成如下三步命令：</p>
-<ol>
-<li>hexo clean：清除缓存</li>
-<li>hexo g：生成静态页面</li>
-<li>hexo s：本地预览页面</li>
-<li>hexo d：将资源提交到服务器中</li>
-</ol>
-</li>
-</ul>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
-<li>安装环境变量及配置。</li>
-<li>创建GitHub仓库。</li>
-<li>配置证书。</li>
-<li>部署hexo。</li>
-<li>导入自己喜欢的主题。</li>
-</ol>
-<h3 id="多终端同步"><a href="#多终端同步" class="headerlink" title="多终端同步"></a>多终端同步</h3><p>为了源码安全及写作方便，多终端同步是有必要的。搜索了很多方法，说的最多的是设置分支的方法，总感觉差那么一点意思。后来发现创建私有仓库的方法，这也是之前放弃的原因，太难了。。还好经过不断的摸索，总算解决了。。</p>
-<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><ul>
-<li><p>跟之前建站的时候一样，只是改为私有，名称为hexo，其他默认。得到仓库地址：git@github:xxx/hexo.git。执行以上命令之前，先把主题文件夹下的.git文件夹删除（可能隐藏），我就因为没有删除有折腾了N久。</p>
-</li>
-<li><p>在本地hexo仓库下执行：git remote add origin <a href="mailto:&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#x6d;</a>:xxx/hexo.git</p>
-</li>
-<li><p>执行：git remote -v，查看仓库是否连接成功。</p>
-</li>
-<li><p>执行：git commit -m “first commit”</p>
-</li>
-<li><p>执行：git branch -M master</p>
-</li>
-<li><p>执行：git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:svtyy/hexo.git</p>
-</li>
-<li><p>执行：git push -u origin master</p>
-</li>
-</ul>
-<p>完成以上操作应该会把源码推送到远程仓库了。</p>
-<ul>
-<li>解除关联远程分支：git remote remove origin</li>
-</ul>
-<h4 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h4><p>换台电脑的时候就可以从远程仓库直接克隆下来，实现多终端操作。</p>
-<ul>
-<li>在本地想要存放仓库的位置执行：git clone <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#109;</a>:xxx/hexo.git</li>
-</ul>
-<h4 id="终端同步"><a href="#终端同步" class="headerlink" title="终端同步"></a>终端同步</h4><ul>
-<li>任意终端完成修改后：</li>
-</ul>
-<ol>
-<li>hexo clean </li>
-<li>hexo g    </li>
-<li>hexo s    </li>
-<li>hexo d    </li>
-<li>git add .   </li>
-<li>git commit -m “更新源文件” </li>
-<li>git push origin master </li>
-<li>git pull origin master </li>
-</ol>
-<p>我的就是这样完成了搭建和多终端同步，不知道是不是任何时候都可以按照做完成，也不知道是不是可以省略掉哪些步骤，或者还有哪里是可以完善的，只能靠以后不断的摸索了。当然，那不是我的初衷，我只是想用这个工具，懂得操作就行，它是怎么运作，原理是什么关心不上了。在这个过程中，参考了非常多的博文，十分感谢！</p>
-<p>​      </p>
-<p>​     </p>
-]]></content>
-      <categories>
-        <category>网站搭建</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>“番茄”那一点点事</title>
     <url>/2021/01/25/%E2%80%9C%E7%95%AA%E8%8C%84%E2%80%9D%E9%82%A3%E4%B8%80%E7%82%B9%E7%82%B9%E4%BA%8B/</url>
     <content><![CDATA[<p>出海冲浪目的就是工作、学习和娱乐，不要违反相关法律法规。</p>
@@ -218,21 +218,6 @@
       </categories>
       <tags>
         <tag>番茄</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于开车</title>
-    <url>/2021/02/18/%E5%85%B3%E4%BA%8E%E5%BC%80%E8%BD%A6/</url>
-    <content><![CDATA[<p>每一次长假结束都是一次堵车的旅行，昨天就想抢在高速免费前回到梧州，哪想到经常走的柳梧高速居然到处堵车，还真是害怕被堵在路上，没能按时回到公司了。。那损失就有点大了。<a id="more"></a></p>
-<p>但是晚上开车总有一些是很不爽的，有些人嘛龟速，有些人么就是一路远光灯，真的是一点安全意识都没有的。我也是服了，你闪远光提醒，别人毫无反馈。更有点人一路跟着屁股后面还开远光，有些路怒也是难免，真是是毫无路德！不知道有什么办法可以治理一下。</p>
-<p>总感觉这些人太自私了。这让我想起学车的时候，只要过关就行，其他哪里管什么怎么用灯光的事。那些都是应付了事，还有交通规则，没人在意。其实我感觉龟速、不合理使用灯光比超速的危害还大。。只是超速比龟速和不合理使用灯光更容易执法罢了。想想，这年头谁会没事跟自己找事呢。。</p>
-]]></content>
-      <categories>
-        <category>吐槽</category>
-      </categories>
-      <tags>
-        <tag>开车</tag>
-        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
@@ -274,6 +259,21 @@
       </categories>
       <tags>
         <tag>设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于开车</title>
+    <url>/2021/02/18/%E5%85%B3%E4%BA%8E%E5%BC%80%E8%BD%A6/</url>
+    <content><![CDATA[<p>每一次长假结束都是一次堵车的旅行，昨天就想抢在高速免费前回到梧州，哪想到经常走的柳梧高速居然到处堵车，还真是害怕被堵在路上，没能按时回到公司了。。那损失就有点大了。<a id="more"></a></p>
+<p>但是晚上开车总有一些是很不爽的，有些人嘛龟速，有些人么就是一路远光灯，真的是一点安全意识都没有的。我也是服了，你闪远光提醒，别人毫无反馈。更有点人一路跟着屁股后面还开远光，有些路怒也是难免，真是是毫无路德！不知道有什么办法可以治理一下。</p>
+<p>总感觉这些人太自私了。这让我想起学车的时候，只要过关就行，其他哪里管什么怎么用灯光的事。那些都是应付了事，还有交通规则，没人在意。其实我感觉龟速、不合理使用灯光比超速的危害还大。。只是超速比龟速和不合理使用灯光更容易执法罢了。想想，这年头谁会没事跟自己找事呢。。</p>
+]]></content>
+      <categories>
+        <category>吐槽</category>
+      </categories>
+      <tags>
+        <tag>开车</tag>
+        <tag>吐槽</tag>
       </tags>
   </entry>
   <entry>
