@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>2021新年</title>
+    <url>/2021/01/29/2021%E6%96%B0%E5%B9%B4/</url>
+    <content><![CDATA[<p>滚蛋吧2020，您好2021！</p>
+<span id="more"></span>
+
+<h4 id="告别2020年"><a href="#告别2020年" class="headerlink" title="告别2020年"></a>告别2020年</h4><p>2020是奇怪的一年，一年到头没完没了的疫情，影响着我们的生活。果然是强大的庚子年，犹如之前的庚子年。唯一可以庆幸的是回到了家乡，离家近，要是还在海南，那就麻烦大了。一切都是冥冥中注定。这一年，从头到尾都是忙个没完没了，周中上班，周末带孩子，各种应酬算是少了。但是恶心的事多了。临近放假了，反而身体各种毛病来了，难道是因为突然放松下来的原因么？嘴角起泡，身体感觉非常疲惫，太奇怪了。好像没试过这样的，前几天也请假休息。</p>
+<p>这一年几乎是在忙碌，也不知道在忙什么，成果是什么，重回WD似乎是一个正确的决定，但是总感觉少了点什么。感受却做错了蛮多事，很多事情考虑不周全，感觉还是缺少一点责任。年初的销售物业桩基础选型没有坚持，其实应该坚持选用管桩，至少应充分表达自己的意见，把该有的动作做出来。到持有物业坚持管桩但是设计院又不给力，自己错漏一大把，基础论证专家又一塌糊涂，真是混饭吃的。还是得靠自己审核。感觉最大的问题就是两个方向上的把握没有做好，造成太多太多的遗憾。经历太多不可控的因素，太多的时间花在疲于应对上，没有真正的有计划去做点什么。无论是工作还是家庭，缺失了太多太多。也许可能找到各种各样的理由，但终究是需要自己去承担那样的结果，希望这一切都在2020停止。</p>
+<h4 id="您好！2021"><a href="#您好！2021" class="headerlink" title="您好！2021"></a>您好！2021</h4><p>开工了，感觉过年7天就没有时间思考过今年打算怎么办，也没感觉是休息了7天，天天不知道忙什么。还是觉得应该充实专业能力，想太多没有，还不如做好自己，其他的就顺气自然吧。时间过得很快，去年非常忙，但愿今年会好一点，希望有更多静心的时刻。今年务必开源节流，时间不会等人。加油！</p>
+<ul>
+<li>每一个不曾起舞的日子，都是对生命的辜负！</li>
+</ul>
+]]></content>
+      <categories>
+        <category>新年</category>
+      </categories>
+      <tags>
+        <tag>新年</tag>
+        <tag>2021</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github Actions自动部署博客</title>
+    <url>/2021/01/27/Github%20Actions%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>居然自动部署成功了，突然觉得好有成就感啊。我觉得我好容易满足啊，真正体会什么是知足常乐，是不是也算是小确幸。开心还是得发自内心的。</p>
+<span id="more"></span>
+
+<h4 id="添加密钥对"><a href="#添加密钥对" class="headerlink" title="添加密钥对"></a>添加密钥对</h4><ul>
+<li>在私有仓库中，将本地生成的私钥的内容<code>Settings &gt; Secrets</code>作为DEPLOY_KEY添加到菜单中，名称为DEPLOY_KEY。</li>
+</ul>
+<h4 id="部署workflow"><a href="#部署workflow" class="headerlink" title="部署workflow"></a>部署workflow</h4><ul>
+<li>点击博客源码仓库的Action，创建workflow，名称随意。参考：<a href="https://www.heson10.com/posts/61031.html">原文</a> </li>
+<li>我用的代码，<a href="https://github.com/marketplace/actions/hexo-action">原文</a> ，修改为自己的用户名和邮箱。</li>
+<li>点击Action查看部署状态，都绿意味着部署成功了。</li>
+</ul>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>编写完成文章后，直接推送修改的文件到博客源码仓库，三条命令：</p>
+<ol>
+<li>git add .</li>
+<li>git commit -m “博文名称”</li>
+<li>git push </li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>基本步骤：</p>
+<ul>
+<li>使用Github令牌部署hexo博客</li>
+<li>Github新建一个私有仓库，并上传hexo博客源码</li>
+<li>配置Github Action实现自动化部署</li>
+</ul>
+<p>感谢以上两位作者，版权归引文的两位作者所有。衷心感谢！</p>
+<h4 id="自动部署的问题"><a href="#自动部署的问题" class="headerlink" title="自动部署的问题"></a>自动部署的问题</h4><ol>
+<li>自动部署丢失自定义域名：把CNAME文件放到hexo根目录sourece文件夹下。</li>
+</ol>
+<h4 id="取消自动部署"><a href="#取消自动部署" class="headerlink" title="取消自动部署"></a>取消自动部署</h4><ul>
+<li>无语了，每次更新博文，没更新的博文也跟着日期更新了。这自动部署怎么是这样的，为什么部署更新什么就部署什么，每次博文都是一团乱，不再是按更新时间排序了。原谅我这个拿来主义者，搞不懂为什么。。还是算了，就多几个步骤吧。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>网站搭建</category>
+      </categories>
+      <tags>
+        <tag>自动部署</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>V2ray一键安装脚本</title>
+    <url>/2021/11/29/V2ray%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<p><strong>&lt;以下内容完成照搬原作，版权属于原作者&gt;</strong><span id="more"></span></p>
+<p>支持 V2Ray 绝大多数传输协议，WebSocket + TLS，HTTP/2，Shadowsocks，动态端口，集成 BBR 和锐速优化等。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>V2Ray 官网：<a href="https://www.v2ray.com/">https://www.v2ray.com</a></p>
+<p>V2Ray 是一个于 Shadowsocks 之后非常好用的代理软件，但是由于 V2Ray 的配置略复杂，GUI 客户端不完善，所以 V2Ray 并没有像 Shadowsocks 在科学上网人群之中那么流行。<br>不过我想，像我这种小小白萌新，更需要的是一个好用的一键安装脚本……<br>所以，此脚本是为了方便像我这种小小白萌新更加容易去使用 V2Ray，配置 V2Ray。希望对你有帮助 ^_^</p>
+<blockquote>
+<p>如果你是毫无经验的小白，搭建 V2Ray 请看此教程：<a href="https://github.com/233boy/v2ray/wiki/V2Ray%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E5%9B%BE%E6%96%87%E6%95%99%E7%A8%8B">V2Ray搭建详细图文教程</a></p>
+</blockquote>
+<h2 id="功能特点"><a href="#功能特点" class="headerlink" title="功能特点"></a>功能特点</h2><ol>
+<li><p>支持 V2Ray 多数传输协议</p>
+</li>
+<li><p>支持 WebSocket + TLS / HTTP/2</p>
+</li>
+<li><p>支持 动态端口 (WebSocket + TLS，Socks5， HTTP/2 除外)</p>
+</li>
+<li><p>支持 屏蔽广告</p>
+</li>
+<li><p>支持 配置 Shadowsocks</p>
+</li>
+<li><p>支持 下载客户端配置文件 (不用 Xshell 也可以下载)</p>
+</li>
+<li><p>客户端配置文件同时支持 SOCKS 和 HTTP</p>
+</li>
+<li><p>支持 生成 V2Ray 配置二维码链接 (仅适用部分客户端)</p>
+</li>
+<li><p>支持 生成 V2Ray 配置信息链接</p>
+</li>
+<li><p>支持 生成 Shadowsocks 配置二维码链接</p>
+</li>
+<li><p>支持修改 V2Ray 传输协议</p>
+</li>
+<li><p>支持修改 V2Ray 端口</p>
+</li>
+<li><p>支持修改 动态端口</p>
+</li>
+<li><p>支持修改 用户ID</p>
+</li>
+<li><p>支持修改 TLS 域名</p>
+</li>
+<li><p>支持修改 Shadowsocks 端口</p>
+</li>
+<li><p>支持修改 Shadowsocks 密码</p>
+</li>
+<li><p>支持修改 Shadowsocks 加密协议</p>
+</li>
+<li><p>自动启用 BBR 优化 (如果内核支持)</p>
+</li>
+<li><p>集成可选安装 BBR (by teddysun.com)</p>
+</li>
+<li><p>集成可选安装 锐速 (by moeclub.org)</p>
+</li>
+<li><p>一键 查看运行状态 / 查看配置信息 / 启动 / 停止 / 重启 / 更新 / 卸载 / 等等…</p>
+</li>
+<li><p>人性化向导 &amp; 纯净安装 &amp; 卸载彻底</p>
+</li>
+</ol>
+<h2 id="安装或卸载"><a href="#安装或卸载" class="headerlink" title="安装或卸载"></a>安装或卸载</h2><blockquote>
+<p>温馨提醒，此脚本默认屏蔽一些不友好的网站！(仅限轮子相关)</p>
+</blockquote>
+<p>要求：Ubuntu 16+ / Debian 8+ / CentOS 7+ 系统<br>推荐使用 Debian 9 系统，脚本会自动启用 BBR 优化。<br>备注：不推荐使用 Debian 8 系统，因为 Caddy 申请证书可能会出现一些莫名其妙的问题<br><strong>我们推荐使用 <a href="https://on.affpass.com/go/bwg">搬瓦工VPS</a>，稳定，快速，针对中国线路专门优化，无须担心跑路，服务好，并且支持退款。<br>在这里可以找到 <a href="https://233vps.com/post/bandwagonhost-plans/">搬瓦工 VPS 套餐大全 </a>，优惠码在这里： <a href="https://233vps.com/post/bandwagonhost-coupon-code/">搬瓦工 VPS 优惠码</a></strong><br>使用 root 用户输入下面命令安装或卸载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -s -L https:&#x2F;&#x2F;git.io&#x2F;v2ray.sh)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果提示 curl: command not found ，那是因为你的 VPS 没装 Curl<br>ubuntu/debian 系统安装 Curl 方法: <code>apt-get update -y &amp;&amp; apt-get install curl -y</code><br>centos 系统安装 Curl 方法: <code>yum update -y &amp;&amp; yum install curl -y</code><br>安装好 curl 之后就能安装脚本了</p>
+</blockquote>
+<p>备注：安装完成后，输入 <code>v2ray</code> 即可管理 V2Ray<br>如果提示你的系统不支持此脚本，那么请尝试更换系统</p>
+<p>下面是此脚本的一些截图</p>
+<p>安装选项</p>
+<p><img src="https://camo.githubusercontent.com/db094f4fd3f49c9e690075abbfd697784e8741a7f22cfaff8e078c39533443a5/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30312f30352f356333303532323463666530352e6a7067" alt="安装 V2Ray"></p>
+<p>配置 Shadowsocks</p>
+<p><img src="https://camo.githubusercontent.com/aa3a6b8b1619e873af31012ff31b34719eb7e581e79bf807102de48bf98d5f58/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30312f30352f356333303532323461643131632e6a7067" alt="配置 Shadowsocks"></p>
+<p>安装完成</p>
+<p><img src="https://camo.githubusercontent.com/cffb2ead2937f6b36df1d02ec53ce95b7a59250939a72c1b3c1ee6858562d92c/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30312f30352f356333303532323462626437352e6a7067" alt="V2Ray 安装完成"></p>
+<p>管理面板</p>
+<p><img src="https://camo.githubusercontent.com/37115b86d626678197b248399ec65e4d4156c8dcdc27af508f209a08cb71dbb0/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30312f30352f356333303532323463363036652e6a7067" alt="V2Ray 管理面板"></p>
+<h2 id="Telegram-专用代理"><a href="#Telegram-专用代理" class="headerlink" title="Telegram 专用代理"></a>Telegram 专用代理</h2><p>如果你在使用 Telegram 的话，你可以配置一个 Telegram 的专用代理，这样来，在某些情况下你就不需要再开一个代理软件了。<br>输入 <code>v2ray tg</code> 即可配置 TG 专用代理<br>配置 Telegram MTProto</p>
+<p><img src="https://camo.githubusercontent.com/8d81d1a89215d09c0ecc6b104a4e6410de34499feefcba0bfa54312710586761/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30312f30352f356333303532323438656137342e6a7067" alt="配置Telegram MTProto"></p>
+<p>Telegram MTProto 配置信息</p>
+<p><img src="https://camo.githubusercontent.com/d6cd8b9f11e813426e671ed5e4f6063672a93e377eee4e978fe07ea05bde300e/68747470733a2f2f692e6c6f6c692e6e65742f323031392f30312f30352f356333303532323438613130662e6a7067" alt="Telegram MTProto 配置信息"></p>
+<h2 id="快速管理"><a href="#快速管理" class="headerlink" title="快速管理"></a>快速管理</h2><p><code>v2ray info</code> 查看 V2Ray 配置信息<br><code>v2ray config</code> 修改 V2Ray 配置<br><code>v2ray link</code> 生成 V2Ray 配置文件链接<br><code>v2ray infolink</code> 生成 V2Ray 配置信息链接<br><code>v2ray qr</code> 生成 V2Ray 配置二维码链接<br><code>v2ray ss</code> 修改 Shadowsocks 配置<br><code>v2ray ssinfo</code> 查看 Shadowsocks 配置信息<br><code>v2ray ssqr</code> 生成 Shadowsocks 配置二维码链接<br><code>v2ray status</code> 查看 V2Ray 运行状态<br><code>v2ray start</code> 启动 V2Ray<br><code>v2ray stop</code> 停止 V2Ray<br><code>v2ray restart</code> 重启 V2Ray<br><code>v2ray log</code> 查看 V2Ray 运行日志<br><code>v2ray update</code> 更新 V2Ray<br><code>v2ray update.sh</code> 更新 V2Ray 管理脚本<br><code>v2ray uninstall</code> 卸载 V2Ray</p>
+<h2 id="配置文件路径"><a href="#配置文件路径" class="headerlink" title="配置文件路径"></a>配置文件路径</h2><p>V2Ray 配置文件路径：/etc/v2ray/config.json<br>Caddy 配置文件路径：/etc/caddy/Caddyfile<br>脚本配置文件路径: /etc/v2ray/233blog_v2ray_backup.conf</p>
+<blockquote>
+<p>警告，请不要修改脚本配置文件，免得出错。。<br>如果你不是有特别的需求，也不要修改 V2Ray 配置文件<br>不过也没事，若你实在想要瞎折腾，出错了的话，你就卸载，然后重装，再出错 ，再卸载，再重装，重复到自己不再想折腾为止。。</p>
+</blockquote>
+<h2 id="WS-TLS-HTTP2"><a href="#WS-TLS-HTTP2" class="headerlink" title="WS+TLS / HTTP2"></a>WS+TLS / HTTP2</h2><p>如果你使用了这两个协议，那么就会使用了脚本自带的 Caddy 集成<br>不管如何，不建议直接去更改 Caddy 的配置：/etc/caddy/Caddyfile<br>如果你需要配置其他网站相关，请将网站的配置文件放到 /etc/caddy/sites 目录下，然后重启 Caddy 进程即可，脚本默认生成的 Caddy 的配置会加载 /etc/caddy/sites 这个目录下的所有配置文件。<br>所以，请将你的网站配置文件放到 /etc/caddy/sites 目录下，完完全全不需要去更改 /etc/caddy/Caddyfile<br>记得重启 Caddy 进程：service caddy restart</p>
+<h2 id="Caddy-插件相关"><a href="#Caddy-插件相关" class="headerlink" title="Caddy 插件相关"></a>Caddy 插件相关</h2><p>本脚本集成了 Caddy，但不集成任何 Caddy 插件，如果你需要安装某些 Caddy 插件，你可以使用官方的 Caddy 安装脚本来一键安装。<br>本人的脚本集成的 Caddy 的安装路径，跟 Caddy 官方的安装脚本是一致的。所以可以直接安装，不会有任何问题</p>
+<p>举个例子，安装包含 http.filebrowser 插件的 Caddy，执行如下命令即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl https:&#x2F;&#x2F;getcaddy.com | bash -s personal http.filebrowser</span><br></pre></td></tr></table></figure>
+
+<p>你可以在 <a href="https://caddyserver.com/download">https://caddyserver.com/download</a> 找到 Caddy 更多插件和安装命令。</p>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>V2Ray 客户端配置文件 SOCKS 监听端口为 <code>2333</code>， HTTP 监听端口为 <code>6666</code><br>可能某些 V2Ray 客户端的选项或描述略有不同，但事实上，此脚本显示的 V2Ray 配置信息已经足够详细，由于客户端的不同，请对号入座。</p>
+<h2 id="反馈问题"><a href="#反馈问题" class="headerlink" title="反馈问题"></a>反馈问题</h2><p>请先查阅：<a href="https://233v2.com/post/10/">V2Ray 一键安装脚本疑问集合</a><br>Telegram 群组：<a href="https://t.me/blog233"> https://t.me/blog233</a><br>Github 反馈：<a href="https://github.com/233boy/v2ray/issues"> https://github.com/233boy/v2ray/issues</a><br>任何有关于 V2Ray 的问题，请自行到 V2Ray 官方反馈。<br><strong>目前只支持配置一个 V2Ray 账号…一个 Shadowsocks 账号。。不支持 SSR。。</strong><br><strong>使用国际大厂的 VPS，请自行在安全组 (防火墙) 开放端口和 UDP 协议 (如果你要使用含有 mKCP 的传输协议)</strong></p>
+<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p>为了避免由于不可抗拒的原因所造成本人主动删除脚本，所以建议请将本脚本 Fork 一份<br>备份地址：<a href="https://github.com/233boy/v2ray/fork"> https://github.com/233boy/v2ray/fork</a><br>安装方法，确保你已经 Fork 了脚本，将 233boy 修改成你的 Github 用户名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;233boy&#x2F;v2ray -b master</span><br><span class="line">cd v2ray</span><br><span class="line">chmod +x install.sh</span><br><span class="line">.&#x2F;install.sh local</span><br></pre></td></tr></table></figure>
+
+<p>如果提示 git 命令不可用，那就自己安装咯，不会安装啊？我也不知道啊。哈哈</p>
+<h2 id="及时更新脚本"><a href="#及时更新脚本" class="headerlink" title="及时更新脚本"></a>及时更新脚本</h2><p>为确保你能愉快使用，请留意使用 <code>v2ray update.sh</code> 命令来更新管理脚本。<br>脚本难免会有 BUG，所以建议有空就检查一下更新情况。</p>
+<h2 id="关注脚本最新动态"><a href="#关注脚本最新动态" class="headerlink" title="关注脚本最新动态"></a>关注脚本最新动态</h2><p>本人会在 <a href="https://t.me/tg2333">本站 Telegram 公告频道</a> 推送脚本最新动态相关，如果你使用 Telegram 的话，可以关注一下。<br>当然啦，你也可以加入 <a href="https://t.me/blog233">本站 Telegram 群组</a> 来吹水。</p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p>V2Ray：<a href="https://www.v2ray.com/"> https://www.v2ray.com/</a></p>
+<h2 id="版权"><a href="#版权" class="headerlink" title="版权"></a>版权</h2><p>此脚本使用 GPL v3 协议共享。</p>
+<h2 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h2><p>如果觉得脚本好用，记得分享给你的其他小伙伴们哦~</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>请勿违反国家法律法规，否则后果自负！<br>使用一键脚本并不会害了你，并且会让你节省大量的时间，工具从来都是为了更快的解决问题。</p>
+]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>科学上网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo建站及多终端同步</title>
+    <url>/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<p>上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。<span id="more"></span></p>
+<p>可能还是有强迫症，脑子里一直有这个声音，不完成不罢休。所以干脆重新做了。这次终于成功备份到私有仓库。中间经历的非常多的错误，如取消远程关联、切换分支、主题没有备份等等，也许对专业的人来说太简单的问题了，但对我来说就是天书一样。还好有强大的Google，不断的查找答案，不断的修正，终于搞定。</p>
+<p>这显然不是什么教程，只是我不断的试错之后得到的属于我个人的总结，只是不希望以后遇到什么需要重新来过的时候，又满网络去Google。我太难了。。。</p>
+<h3 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><ol>
+<li>安装必备环境：</li>
+</ol>
+<ul>
+<li>安装git：<a href="https://git-scm.com/%EF%BC%8C%E5%B0%86%E5%85%B6%E4%B8%8B%E8%BD%BD%EF%BC%8C%E7%84%B6%E5%90%8EWindows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%97%A0%E8%84%91%E5%BC%8F%E5%AE%89%E8%A3%85%EF%BC%88%E4%B8%80%E8%B7%AFenter%E5%88%B0%E5%BA%95%EF%BC%89%E3%80%82%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E6%89%93%E5%BC%80cmd%E7%BB%88%E7%AB%AF%EF%BC%88win+r">https://git-scm.com/，将其下载，然后Windows系统下无脑式安装（一路enter到底）。安装好后打开cmd终端（win+r</a> -&gt; 输入cmd -&gt; 回车），执行<code>git --version</code>，若出现<code>git version 2.19.2.windows.1</code>之类的版本输出，就表示已经成功安装。<ul>
+<li>安装node.js：<a href="https://nodejs.org/zh-cn/%EF%BC%8Cnode.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8CGit%E7%9A%84%E5%AE%89%E8%A3%85%E5%A6%82%E5%87%BA%E4%B8%80%E8%BE%99%EF%BC%8C%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E5%9C%A8cmd%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%60node">https://nodejs.org/zh-cn/，node.js的安装和Git的安装如出一辙，安装好后在cmd终端使用`node</a> -version<code>命令，如出现</code>v12.20.1<code>类似输出，则说明已经成功安装。（安装</code>v12.20.1`可以减少一点麻烦）</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><p>创建仓库：</p>
+<ul>
+<li>注册 <code>GitHub：github.com</code> 。</li>
+<li>创建仓库，一般形式为：xxx.github.io。xxx用GitHub的用户名。勾选是否为仓库生成一个readme.md文件。</li>
+<li>点击<code>create repository</code> 完成生成仓库。</li>
+</ul>
+</li>
+<li><p>创建密钥及部署证书：在任意位置鼠标右键选择<code>git bash here</code>，然后在git终端执行以下命令：</p>
+<ul>
+<li>git config –global user.name XXX   # XXX表示github注册时的用户名。</li>
+<li>git config –global user.email XXX  # XXX表示github注册时的邮箱。</li>
+<li>ssh-keygen -t rsa -C <a href="mailto:&#x58;&#88;&#88;&#x40;&#x58;&#88;&#88;&#46;&#x63;&#x6f;&#x6d;">&#x58;&#88;&#88;&#x40;&#x58;&#88;&#88;&#46;&#x63;&#x6f;&#x6d;</a> # <a href="mailto:&#88;&#x58;&#x58;&#x40;&#x58;&#x58;&#88;&#46;&#99;&#111;&#109;">&#88;&#x58;&#x58;&#x40;&#x58;&#x58;&#88;&#46;&#99;&#111;&#109;</a>指的是注册github时候使用的邮箱。</li>
+<li>在命令执行的时候回有一些yes、no的选择，直接默认回车。之后将在c/Users/you/.ssh/id_rsa.pub路径文件看到生成的秘钥对，用记事本打开，之后复制。</li>
+<li>将ssh key添加到我们的github账户。在个人github主页找到settings，然后点击SSH and GPG keys，之后再出现的页面的中点击New SSH key。名字随意，将复制到的id_rsa.pub粘贴到key，点击Add SSH key即可。</li>
+<li>检查证书是否配置成功：打开git bash here，执行ssh -T <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;</a></li>
+</ul>
+<p>以上即完成基本环境的布置，接下来就是hexo博客的搭建了。</p>
+</li>
+</ol>
+<h4 id="hexo搭建-1"><a href="#hexo搭建-1" class="headerlink" title="hexo搭建"></a>hexo搭建</h4><ul>
+<li><p>首先安装Hexo。根据需要在磁盘中创建一个名为hexo文件夹。之后进入该文件并在当前路径下打开git bash here，依次运行如下命令来进行搭建hexo环境：</p>
+<ol>
+<li>npm install hexo-cli -g</li>
+<li>npm install hexo –save</li>
+</ol>
+</li>
+<li><p>执行Hexo –version，出现一堆的版本信息说明就配置成功了。</p>
+</li>
+<li><p>初始化hexo：hexo init。</p>
+</li>
+<li><p>网站所需组件：npm install。</p>
+<p>稍等片刻即可完成所有的安装步骤，至此，一个基本的Hexo博客框架已经完成了，现在只需要最后一步了：导入喜欢的博客主题即可正常使用了。本人喜欢next主题，所以。。。</p>
+</li>
+</ul>
+<h4 id="导入主题"><a href="#导入主题" class="headerlink" title="导入主题"></a>导入主题</h4><ul>
+<li><p>在hexo文件夹下，右键点击git bash here，并执行如下命令：git clone <a href="https://github.com/theme-next/hexo-theme-next.git%E3%80%82">https://github.com/theme-next/hexo-theme-next.git。</a></p>
+</li>
+<li><p>用文本编辑器编辑网站配置文件_config.yml，将theme改为next。</p>
+</li>
+<li><p>操作完成之后，完成如下三步命令：</p>
+<ol>
+<li>hexo clean：清除缓存</li>
+<li>hexo g：生成静态页面</li>
+<li>hexo s：本地预览页面</li>
+<li>hexo d：将资源提交到服务器中</li>
+</ol>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>安装环境变量及配置。</li>
+<li>创建GitHub仓库。</li>
+<li>配置证书。</li>
+<li>部署hexo。</li>
+<li>导入自己喜欢的主题。</li>
+</ol>
+<h3 id="多终端同步"><a href="#多终端同步" class="headerlink" title="多终端同步"></a>多终端同步</h3><p>为了源码安全及写作方便，多终端同步是有必要的。搜索了很多方法，说的最多的是设置分支的方法，总感觉差那么一点意思。后来发现创建私有仓库的方法，这也是之前放弃的原因，太难了。。还好经过不断的摸索，总算解决了。。</p>
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><ul>
+<li><p>跟之前建站的时候一样，只是改为私有，名称为hexo，其他默认。得到仓库地址：git@github:xxx/hexo.git。执行以上命令之前，先把主题文件夹下的.git文件夹删除（可能隐藏），我就因为没有删除有折腾了N久。</p>
+</li>
+<li><p>在本地hexo仓库下执行：git remote add origin <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#109;</a>:xxx/hexo.git</p>
+</li>
+<li><p>执行：git remote -v，查看仓库是否连接成功。</p>
+</li>
+<li><p>执行：git commit -m “first commit”</p>
+</li>
+<li><p>执行：git branch -M master</p>
+</li>
+<li><p>执行：git remote add origin <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:svtyy/hexo.git</p>
+</li>
+<li><p>执行：git push -u origin master</p>
+</li>
+</ul>
+<p>完成以上操作应该会把源码推送到远程仓库了。</p>
+<ul>
+<li>解除关联远程分支：git remote remove origin</li>
+</ul>
+<h4 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h4><p>换台电脑的时候就可以从远程仓库直接克隆下来，实现多终端操作。</p>
+<ul>
+<li>在本地想要存放仓库的位置执行：git clone <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>:xxx/hexo.git</li>
+</ul>
+<h4 id="终端同步"><a href="#终端同步" class="headerlink" title="终端同步"></a>终端同步</h4><ul>
+<li>任意终端完成修改后：</li>
+</ul>
+<ol>
+<li>hexo clean </li>
+<li>hexo g    </li>
+<li>hexo s    </li>
+<li>hexo d    </li>
+<li>git add .   </li>
+<li>git commit -m “更新源文件” </li>
+<li>git push origin master </li>
+<li>git pull origin master </li>
+</ol>
+<p>我的就是这样完成了搭建和多终端同步，不知道是不是任何时候都可以按照做完成，也不知道是不是可以省略掉哪些步骤，或者还有哪里是可以完善的，只能靠以后不断的摸索了。当然，那不是我的初衷，我只是想用这个工具，懂得操作就行，它是怎么运作，原理是什么关心不上了。在这个过程中，参考了非常多的博文，十分感谢！</p>
+<p>​      </p>
+<p>​     </p>
+]]></content>
+      <categories>
+        <category>网站搭建</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu+win双系统修改启动项方法</title>
+    <url>/2022/10/17/ubuntu+win%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8%E9%A1%B9%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>在安装了双系统的电脑上，我们有时需要将经常使用的系统设置为默认进入的系统，设置方法如下：</p>
+<ol>
+<li>首先进入Ubuntu系统环境下。</li>
+<li>打开终端。</li>
+<li>输入sudo gedit /etc/default/grub，并根据提示输入密码。</li>
+<li>在打开后的文本文件中修改GRUB_DEFAULT的默认值，原来是0，表示Ubuntu系统，若需要修改为Windows，则需要将数字修改为开机时Windows所在的位置。因为Ubuntu在第一个位置，所以数字0表示它，我的Windows在第三个位置，所以我将数字修改为2，你需要查看自己Windows系统所在的位置，可能有所不同。</li>
+<li>将GRUB_DEFAULT的值改为2之后，我们保存并关闭刚刚打开的文本文件。</li>
+<li>再在终端输入命令：sudo update-grub，表示刷新并更改开机启动设置。这时再关闭电脑重新打开，系统选择洁面就会默认选择Windows系统。</li>
+</ol>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/"></a>版权声明：本文为博主原创文章，本文链接：<a href="https://blog.csdn.net/gaishi_hero/article/details/87178123">ubuntu + windows双系统默认启动项修改方法_gaishi_hero的博客-CSDN博客</a></p>
+]]></content>
+      <categories>
+        <category>电脑</category>
+      </categories>
+      <tags>
+        <tag>双系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>R2S旁路由</title>
+    <url>/2021/05/13/R2S%E6%97%81%E8%B7%AF%E7%94%B1/</url>
+    <content><![CDATA[<h2 id="1-写入固件"><a href="#1-写入固件" class="headerlink" title="1.写入固件"></a>1.写入固件</h2><p>和树莓派一样，友善R2S也是没有内置存储空间的，系统需要通过SD卡引导使用。<span id="more"></span></p>
+<h4 id="1-1固件发布地址-klever1988"><a href="#1-1固件发布地址-klever1988" class="headerlink" title="1.1固件发布地址 klever1988"></a>1.1固件发布地址 <a href="https://github.com/klever1988/nanopi-openwrt/releases">klever1988</a></h4><p>这个作者项目会定时编译三种版本(Minimal、Lean、Lienol)，readme中有详细介绍，按需下载即可。</p>
+<blockquote>
+<p>本编译方案采用git rebase(变基)，把友善friendlywrt对openwrt代码的修改应用到Lean和Lienol两个大佬的openwrt分支，并替换friendlywrt整套代码的方式，由此编译出分别包含两位大佬特色优化和插件的两版固件，寻求最佳的插件兼容性和稳定性。而minimal版是我根据自己的理解，在Lean版的基础上只编译我认为不影响设备性能的插件。目前测试结果显示，minimal虽然功能较少，但是性能是比较好的。</p>
+</blockquote>
+<h4 id="1-2-固件写入SD卡"><a href="#1-2-固件写入SD卡" class="headerlink" title="1.2 固件写入SD卡"></a>1.2 固件写入SD卡</h4><p><strong>解压出固件，写入SD卡。</strong></p>
+<p><strong>软件：</strong><a href="https://www.balena.io/etcher/"><strong>balenaEtcher</strong></a></p>
+<h2 id="2-启动系统"><a href="#2-启动系统" class="headerlink" title="2. 启动系统"></a>2. 启动系统</h2><p>SD卡插入R2S，将R2S的WAN口接入主路由器的LAN口上(先以最普通的连接方式接入网络，目的为了进入系统配置参数)，启动系统。</p>
+<h2 id="3-配置系统"><a href="#3-配置系统" class="headerlink" title="3. 配置系统"></a>3. 配置系统</h2><h3 id="3-1-进入R2S后台系统"><a href="#3-1-进入R2S后台系统" class="headerlink" title="3.1 进入R2S后台系统"></a>3.1 进入R2S后台系统</h3><p>在主路由器后台管理页面，找到R2S的IP地址，以我的为例，可以通过名称快速找到FRIENDLYWRT，再访问对应的ip，就可以进入到R2S的系统了。</p>
+<p>登录密码各个版本不同，请见作者<a href="https://github.com/klever1988/nanopi-openwrt">github readme</a>页面。</p>
+<h3 id="3-2-配置旁路由R2S-LAN口"><a href="#3-2-配置旁路由R2S-LAN口" class="headerlink" title="3.2 配置旁路由R2S-LAN口"></a>3.2 配置旁路由R2S-LAN口</h3><p>因为旁路由模式的连接方式是: 旁路由LAN 连接 到 主路由的LAN口上，所以这里我们要设置一下R2S LAN口配置</p>
+<p>取消勾选桥接接口</p>
+<p>勾选DHCP</p>
+<h3 id="3-3-配置旁路由R2S-防火墙规则"><a href="#3-3-配置旁路由R2S-防火墙规则" class="headerlink" title="3.3 配置旁路由R2S-防火墙规则"></a>3.3 配置旁路由R2S-防火墙规则</h3><p>在自定义规则tab下，新增一条规则</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">iptables -t nat -I POSTROUTING -j MASQUERADE</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-配置主路由-关闭DHCP功能"><a href="#3-3-配置主路由-关闭DHCP功能" class="headerlink" title="3.3 配置主路由-关闭DHCP功能"></a>3.3 配置主路由-关闭DHCP功能</h3><p>每个人的主路由器不同，做旁路由模式时，</p>
+<p>需要关闭主路由DHCP</p>
+<p>开启旁路由R2S DHCP</p>
+<h3 id="3-4-重新连接网线接法"><a href="#3-4-重新连接网线接法" class="headerlink" title="3.4 重新连接网线接法"></a>3.4 重新连接网线接法</h3><p>将网线一端插在<strong>R2S的LAN口，一端插在主路由的LAN口</strong>。与刚才的连接方式是不一样的。</p>
+<h3 id="3-5-重启主路由，重启R2S"><a href="#3-5-重启主路由，重启R2S" class="headerlink" title="3.5 重启主路由，重启R2S"></a>3.5 重启主路由，重启R2S</h3><p>暴力点，直接拔掉主路由和R2S的电源就行哈哈哈哈哈哈！</p>
+<h3 id="3-6-验证R2S旁路由设置是否成功"><a href="#3-6-验证R2S旁路由设置是否成功" class="headerlink" title="3.6 验证R2S旁路由设置是否成功"></a>3.6 验证R2S旁路由设置是否成功</h3><p>重启之后，主路由的IP不变，R2S的IP变成3.2里的设置的IP地址，访问一下是否成功即可。</p>
+<p>如果主路由和R2S通过各自IP都可以访问到，说明R2S的旁路由模式已经设置成功了，接下来就是配置插件了。</p>
+<h2 id="4-配置出国插件"><a href="#4-配置出国插件" class="headerlink" title="4 配置出国插件"></a>4 配置出国插件</h2><p>系统自带出国和广告屏蔽插件，直接配置就可以，配置好以后，整个内网下都可以出国了！</p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><ul>
+<li><a href="https://post.smzdm.com/p/a4wme248/">https://post.smzdm.com/p/a4wme248/</a></li>
+<li><a href="https://www.bilibili.com/video/BV1zp4y1X7VQ">https://www.bilibili.com/video/BV1zp4y1X7VQ</a></li>
+<li>感谢原作者，原文地址<a href="https://www.yuque.com/5zhimao/fwgq3b/gs26w1">https://www.yuque.com/5zhimao/fwgq3b/gs26w1</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>科学上网</category>
+      </categories>
+      <tags>
+        <tag>旁路由</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从欧冠到欧超</title>
+    <url>/2021/04/20/%E4%BB%8E%E6%AC%A7%E5%86%A0%E5%88%B0%E6%AC%A7%E8%B6%85/</url>
+    <content><![CDATA[<p>​        昨天欧洲12大豪门宣布成立欧超，老外一片反对，而直播吧一片欢腾，大概这是尊重历史和底蕴，而我们更喜欢看眼前变现，先活下去再说。这也是我们的现状吧，可见我们活着是多么艰难。也许你可以说只是开个玩笑。<span id="more"></span></p>
+<p>​        从感觉上，欧超就是个NBA，没有升降级，固定参赛的球队，每年邀请几个球队参赛。国内联赛变更毫无意义，反正欧超这个摇钱树，国内联赛爱踢不踢，不就是颠覆了足球的传统么。足球有别于NBA这种商演类型的，就是充满竞争。NBA看久了真的变得没有意思，看疲惫了。这是我个人的感觉。</p>
+<p>​        可能是我不喜欢那种我现在都快活不下去，我不管其他人怎么样的那种说法吧，所以，个人对欧超不感冒，不知道真正能成立了是不是会不会看。维持相对的公平和保持应有的竞争性，这样才有意思。</p>
+<p>​        还是比较欣赏俊哥的说法：“这个欧洲超级联赛计划一旦实现，对参赛队所在的本国联赛以及欧冠、欧联杯将是超级巨大的打击，将颠覆欧洲足球历史与传统。势必也会遭到各国联赛与欧足联、国际足联的阻挠，个人觉得如果这几大组织“动真格”，造成球迷、球员与俱乐部的“决裂”，欧洲超级联赛的计划还是很难成功的…… ”</p>
+]]></content>
+      <categories>
+        <category>体育</category>
+      </categories>
+      <tags>
+        <tag>足球</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>彷徨</title>
+    <url>/2021/03/10/%E5%BD%B7%E5%BE%A8/</url>
+    <content><![CDATA[<p>终于，搞定NAS兼顾软路由的功能了，一下子把R2S给淘汰了，想想应该是蛮开心的一件事，但是却总有些失落。总感觉少了点什么，估计是这种“不务正业”让自己有点反感吧。把太多时间浪费在貌似没用的地方。<span id="more"></span></p>
+<p>事实上这也是我最愧疚的地方吧，总是在选择，没有坚定的做一件专业的事，不专心。更有选择的时候没有看长远，如果2011年的时候选择好的那家甲级设计院，又会是什么一个情形，你会觉得失去的才珍贵。从内心来说，当时是觉得害怕在大院里的竞争，自卑和不自信。其实还是很怀念刚毕业的时候的，那时候至少在专业学习能力方面是非常自信的，反而学了几年没怎么进步，又懒于学习了。所以，刚毕业上手很快，但是错失了继续提高的机会。太多太多的原因造成的了。今天，不知道应该是什么样的态度来看待当初的选择。</p>
+<p>女儿一天天长大，心理很着急，该怎么样去培养。昨天居然自己脱裤子大小便，还是在店里。不知道是她意识到了，还是纯粹是好玩，看到别人那样做，她是完成模仿。我就当她的意识到了，好好引导到厕所去吧。教她说话会不会是一个失误，我经常跟她说家乡话，老婆跟她说普通话，貌似她都听得懂，就是感觉不知道怎么说。希望没有什么大问题，关键是有时候她说家乡话，老婆听不懂，不知道她在说什么。其实我的想法是会不会家乡话都无所谓，只要听得懂就好了。今年又要辛苦老婆了，怎么想都没想到会碰到我这种人。我能感受到她的没有安全感，但是我的脾气超越了我的耐心，这有点想我爸的性格，煮熟的鸭子嘴硬。</p>
+<p>感觉脑子很胀，记得中学的时候都有感觉，很难得脑子是很清醒的，总感觉有一层什么东西把脑袋给围住一样，特别难受。其实我的愿望好简单，希望我们都好好的，我觉得需要我做什么都可以。不想这种迷茫的状态。</p>
+]]></content>
+      <categories>
+        <category>成长</category>
+      </categories>
+      <tags>
+        <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>健康第一</title>
+    <url>/2021/02/08/%E5%81%A5%E5%BA%B7%E7%AC%AC%E4%B8%80/</url>
+    <content><![CDATA[<p>估计是年纪大了，稍不留神就生病。骑着电驴吹了冷风，大晚上的喝点啤酒，感觉全身发冷，全身酸痛，无力。还好不是在什么大城市，不然就以为是新冠了。<span id="more"></span></p>
+<p>其实，偶感风寒本身不是什么大问题，但是当没办法做事的时候就很麻烦了。前几天特别有感触，心里特别难受，感觉成了累赘一样。才知道不是年轻时候装逼的年纪了，想想这么一点小时候对家庭的影响都那么大，心里无限愧疚。</p>
+<p>年轻的时候这么一点小病根本就难不倒我，现在就不行了。看来除了年龄问题，更重要的是没有体育锻炼了。去年一整年就踢了2-3次球，比不上以前一个月的运动量，身体的机能下降也是再平常不过的了。新年看来最重要是找回有空就锻炼的习惯，身体是革命的本钱，不能浪费了。。</p>
+<p>（忘了同步，结果把CNAME弄丢了，打开网页404错误。😵）</p>
+]]></content>
+      <categories>
+        <category>健康</category>
+      </categories>
+      <tags>
+        <tag>健康</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>“番茄”那一点点事</title>
+    <url>/2021/01/25/%E2%80%9C%E7%95%AA%E8%8C%84%E2%80%9D%E9%82%A3%E4%B8%80%E7%82%B9%E7%82%B9%E4%BA%8B/</url>
+    <content><![CDATA[<p>出海冲浪目的就是工作、学习和娱乐，不要违反相关法律法规。</p>
+<span id="more"></span>
+
+<ul>
+<li>自由访问Google的日子真是嗨，可惜了退出了国内市场。在国内也是够挣扎的。能活着真是不容易，即使再怎么用心也是没有用的，在利益面前一切都是浮云。。百度真是渣渣，而且还额度。。</li>
+<li>好长一段时间用黑莓手机，偶然的机会看到iqlink，保持着一直可以访问Google，好像使用黑莓也只能用iqlink。但是速度实在不敢恭维，这持续了好几年。直到19年偶然机会看到了“庭说”，才知道还有机场，用了一下，速度真的是飞起来，比iqlink快太多了。可以畅快的使用Google、gmail等等应用。更重要的是可以搜索都更多有用的应用。</li>
+<li>再后来就发现了一键部署这个事了。。</li>
+<li>发现自己跑偏了，如果没有那堵墙该多好，不用那么多工具。但是生活就是这样无奈的，接受当下的一切，活在当下才是真的。即使吃了番茄出了海，也不见得怎么样，学习才是最重要的。理性的分辨不同的声音。</li>
+<li>谷歌云真的是快啊，台湾的节点速度刚刚的，4k秒开。就是除了免费的体验，价格实在太高了，目前这个节点实在是用不上。</li>
+<li>既然已经跑出来了，那就用telegraph呗。使用方法 <a href="https://tingtalk.me/telegram/">庭说</a>，很详细。我感觉我是看了庭说之后才感觉是跑出来是有意思的。</li>
+<li>感觉自己搭梯子也腻了，还是机场比较稳固，而且速度也不错。走着看吧。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>番茄</category>
+      </categories>
+      <tags>
+        <tag>番茄</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于开车</title>
+    <url>/2021/02/18/%E5%85%B3%E4%BA%8E%E5%BC%80%E8%BD%A6/</url>
+    <content><![CDATA[<p>每一次长假结束都是一次堵车的旅行，昨天就想抢在高速免费前回到梧州，哪想到经常走的柳梧高速居然到处堵车，还真是害怕被堵在路上，没能按时回到公司了。。那损失就有点大了。<span id="more"></span></p>
+<p>但是晚上开车总有一些是很不爽的，有些人嘛龟速，有些人么就是一路远光灯，真的是一点安全意识都没有的。我也是服了，你闪远光提醒，别人毫无反馈。更有点人一路跟着屁股后面还开远光，有些路怒也是难免，真是是毫无路德！不知道有什么办法可以治理一下。</p>
+<p>总感觉这些人太自私了。这让我想起学车的时候，只要过关就行，其他哪里管什么怎么用灯光的事。那些都是应付了事，还有交通规则，没人在意。其实我感觉龟速、不合理使用灯光比超速的危害还大。。只是超速比龟速和不合理使用灯光更容易执法罢了。想想，这年头谁会没事跟自己找事呢。。</p>
+]]></content>
+      <categories>
+        <category>吐槽</category>
+      </categories>
+      <tags>
+        <tag>吐槽</tag>
+        <tag>开车</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>混乱的一年</title>
+    <url>/2022/01/07/%E6%B7%B7%E4%B9%B1%E7%9A%84%E4%B8%80%E5%B9%B4/</url>
+    <content><![CDATA[<p>2021年悄然过去，感觉过的很快，又很慢，快是因为都2022了，慢是因为好像都不记得2020了。可能是因为2021经历了太多了吧，从5月份离开WD去AY，一直没有停下来过。</p>
+<p>特别是在浦北的几个月，一直都是在忙碌中，没有一点空闲的时间，那时候终于体会到做工程真的太累了，身体疲惫，内心煎熬，特别是当一家人不在一起，孩子还小的时候。我实在无法理解这样的生活，而且多少人是这样过的。换个角度来看，正是我这样的想法，所以做工程不适合我。明明已经很好，为什么还做这样的挑战。应该是不是最佳的时机，早几年或许完全是不一样的情况。没有那么多如果，人总是要经历一些挫折的，只是时间问题。</p>
+<p>这一年跨度实在有点大，设计-工程-运营，我都有点不知道在做什么了。在这样的年纪做那么大跨度的调整，回想起来都不可思议。遗憾的是时机不太合适，没有时间等我去成长。但是还是觉得很开心，这样的经历让我成长了很多很多，接触面广了，才理解房地产其中的奥妙好多好多。我始终相信一切都是美好的开始。再乱也不能怎么样，接受当下，一切的遇见都是美好！</p>
+]]></content>
+      <categories>
+        <category>成长</category>
+      </categories>
+      <tags>
+        <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计笔记</title>
+    <url>/2021/01/25/%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>工作那么多年了，经验的累计感觉总是缺那么一点，随着年龄的增加，专业的能力感觉没有提升，反而觉得跟不上时代的步骤。仔细想想还是觉得得过且过了，太多的资料没有整理，更没有总结，有些话说了十多年了，还是没做，既定的计划总是变化，混混沌沌过了那么多年，也算是浪费时间了。所以，很多的结果都是因为当初的原因，今天的成果就是昨天的选择。时间永远没有晚的说法，因为谁也不知道尽头是什么时候，不然从现在开始，活在当下。</p>
+<span id="more"></span>
+
+<ul>
+<li>首开跟示范区开放之前的活只能是不计成本了，适当考虑就行。以高周转的开发节奏，实际上时间根本不允许。要完成首开和示范区开放，得三部门同心协力才能完成，不顾其他死活的，都完不成。</li>
+<li>基础需要调查本地的常用桩型，本地没做过的没必要去冒险。特别是大型房开的做法，经济、安全都有先例。</li>
+<li>基础方案确定：拿到初勘报告后，尽快组织设计院出具方案，经成本测算，再组织基础方案论证会。可以先联系专家，了解常用桩型和常规做法。不能让设计院拍脑袋就决定用什么基础类型。</li>
+<li>住宅户型相近，仔细核对各层结构做法是否一致，关注板厚、配筋方式，居然出线同一户型板厚不同的问题；结构开洞是否满足其他专业的需求，可以出一个标准层的开洞图。</li>
+<li>多跟其他项目联系，了解其他项目是怎么做法，有了先例就可以做。最近发现这样的联系少了。。</li>
+<li>屋面机房层高普遍不足，而且要反复发变更，感觉就没审过图。</li>
+<li>基础位置原来是鱼塘，设计基础的时候居然漏看了。</li>
+<li>关注主次力店的门开口是否满足要求，需两跨并满足消防要求。</li>
+<li>LED屏的提资图注意别漏了屏内检修空间的照明、烟感、温感与慧云点位的联接。</li>
+<li>今天去看了下logo的安装，钢架确实是按图纸做了，是属于外装的图纸，采用桁架结构。字体是导标单位去做的，还是觉得没有经验，居然还有那么多裸线，这是不允许，还忘了看控制器是防水等级是不是满足要求，听说夜景的效果是蛮刺眼的，白天是真没看出来到底有没有发光。</li>
+<li>建筑专业相当关键，需要建筑提资给各专业，其他专业返回建筑，再落到图中。结构开洞要同步复核。在前期就要引导设计院跟着节奏走，不能由他们自己玩。</li>
+<li>业态落实及消防设计协调会：二版图出图前50天召开。设计部、规划院、商管总部招商项目经理、地方商管公司、院线、设计单位参会，规划副总主持。</li>
+</ul>
+<ol>
+<li>项目公司通报消防报建报规情况，消防部门的审批意见及要求，现场进度情况。</li>
+<li>商管介绍招商情况，业态条件及分合铺需求。</li>
+<li>确认联发客户及已完成对接的其他客户的平面功能图纸及技术条件。</li>
+<li>已完成的对接或已签约的业态进行重点提示（设计院），未完成需招商明确完成时间，项目公司配合。</li>
+<li>未完成的要求二版图出图前30天完成对接。</li>
+<li>对不满足消防要求的业态，需招商说服客户调整，项目公司积极配合与消防部门沟通，最终已当地消防部门的意见为准。</li>
+</ol>
+<ul>
+<li>深化图纸是设计的责任，需要盯催施工单位及时完成，并按制度报备，把自己的工作做细了。</li>
+<li>下沉广场跟园路交接处存在一级台阶，方案签批的时候就已经做错了，两个平台之间的高差为450mm，台阶数却是5级，明显不符合实际。做3级台阶即可。更没想到的是施工图一致按5级台阶做，都没有复核标高。你都不知道错在哪个步骤，管控是一方面，有时候真的很感慨，设计的周期太短了。。</li>
+<li>支吊架的问题没有好好核对图纸，原来这些都是结构的问题，还以为是管综的事情了。应该对国标图纸没有能直接索引的支吊架进行深化设计，基本上是大型支吊架和多管支吊架，还有就是集团对大型支吊架的特殊要求。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>设计</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运营一个月</title>
+    <url>/2021/11/24/%E8%BF%90%E8%90%A5%E4%B8%80%E4%B8%AA%E6%9C%88/</url>
+    <content><![CDATA[<p>​        转眼到运营已经一个月了，10月中旬的时候还想着终于可以回到设计了。工程真的太痛苦了，我没办法接受自己似乎没有办法照顾到一点点家里的工作。领导说做工程一年都没有回过家，把我给吓到了，这不是我想要的。那时候想想，设计真的太爽了。特别是在WD的时候，真的太轻松，抢了预售，抢了大商业出图，剩下就是周末双休，平时也没啥事，做结构设计多好。应该说是错过了转型的最佳时间吧。</p>
+<span id="more"></span>
+
+<p>​        后来就是阴差阳错，做设计没成，反而做了运营。其实是对运营没有任何概念，我所有的理解都是从《大运营》和《操盘》这两本书上来的，甚至这两本书都没有看完。或许只是了解了大运营究竟是什么一个概念，但是不知道到底平时要做什么，它需要达到的目的是什么，是不是所有的人都具备大运营的能力。</p>
+<p>​        就这样迷迷糊糊做了一个月，这一个月基本就是各种ppt，特别是刚开始的两个礼拜。新老大来，需要跟集团汇报，于是每个项目各种信息的收集，做成ppt汇报。好像比做工程还忙。然后就是各种基础数据的收集、整理。熬过了这个时间，迎来的就是区域调整，我的乖啊。。一个换了两个老大，又一轮PPT和汇报，频繁的变动更不知道应该做什么，更何况我这样一个新手。特别是又来一波优化，都知道明天是不是饭碗还有。幸运的是似乎已经稳定下来了。</p>
+<p>​       其实，我一直想做的就是完成基础数据的收集，这样自己至少对各个项目有了很基础的了解，但是不知道为什么公司系统就是不能够直接拿到，每次都是找项目的人去做，累人累己。我始终相信大运营是个好东西，不然不会那么多房企在推行，但是需要统一的思想，统一的口径，统一的操作平台，你需要的资料直接在基础数据库就能找到，而不是需要再去找各个项目的人去填写，不然，要大运营干嘛，只是给别人添加麻烦的么？</p>
+<p>​        我觉得我心态好就是因为乐观，我始终相信一切都是最好的安排，即使是现在行情那么差的情况下。没有什么是一成不变的，拥抱变化，一切都是最美好的开始。6个月期间，从设计到工程到运营，也不例外，不少么？</p>
+]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>设计</tag>
+        <tag>运营</tag>
+        <tag>工程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>陪伴让我们共同成长</title>
+    <url>/2021/01/25/%E9%99%AA%E4%BC%B4%E8%AE%A9%E6%88%91%E4%BB%AC%E5%85%B1%E5%90%8C%E6%88%90%E9%95%BF/</url>
+    <content><![CDATA[<p>快半个多月了，周末都是阴天又冷，都没办法出门，这周总算可以出去了，带女儿出去玩。家人待在一起的感觉真好，其中会增加很多的思考，究竟我们需要什么。不应该是等着生活来催我们去做什么，得计划着去做什么。变被动为主动，心里的压力就会小一些。孩子的成长需要我们的陪伴，其实也是我们自己在成长，第一次做父母，谁知道会是怎么样的？但求孩子健康成长。</p>
+<span id="more"></span>
+
+<ul>
+<li>女儿一天天长大，似乎现在你说什么她都知道，但是你想逆她的意愿就比较难了，会装哭来忽悠你。太小又打不了，这个阶段真不知道该怎么引导她。教育是一个很麻烦的事情，特别是我们这样一个生活环境。太多我们能买来了便捷，或者是我们越来越懒了。1岁5个月27天。</li>
+<li>在wuzhou待了一个多月，还是回mengshan去了。其实好舍不得，但是还是没办法，我在想是不是我担心的太多，还是觉得老婆太辛苦了。与其两个人辛苦，不如一个人辛苦一点算了，至少一家人在一起终归是最好的选择。终究需要牺牲一些的。1岁6个月7天。</li>
+<li>第一次尝试周末带孩子兼看店，眼见的辛苦，她根本就不管你，完全是自己想去玩就去玩，游戏厅就在几十米之外。还小点的时候出门还会回头看看大人是不是跟着出来，她才走过去。现在，是头也不会屁颠屁颠的跑去了，真是不怕丢啊。特别是在收银的时候跑出去，外面车又多，想想都觉得怕。一个人看店又带孩子好辛苦，从一个男的角度来说可能还好，但是女的就不一样了。多一些体谅和包容，换位思考一下，很多事情就变得不一样了。1岁7个月11天。</li>
+<li>已经好久没有写点什么了。说了陪伴让我们共同成长，没想到到了AY之后，陪伴的时间都没有了，甚至一周一天的休息都能回家了。想想也是有点不可思议的，也是我不喜欢的感觉，每次看到LP和女儿不开心，心里特别难受，缺席的女儿的成长，夫妻之间一年算下来也只是见面那么几次。一年52周，就算每周都能回去，也才陪伴52次。所以，有时候我特别不明白，那么多人渴望的成功居然是没能跟家人在一起的生活，我实在想不明白。说实话，这不是我渴望的生活，平平淡淡躺平对我来说是最合适的。但是我又心里不甘心让家人跟我一样，也许正是这样的矛盾导致我心里左右不平衡，左右摇摆。我需要改变这样的状态，要让我们都在一起！ 2岁1个月13天。</li>
+<li>上周调休了2天回家，陪了女儿几天，周日完成就跟女儿说，爸爸要晚上去上班了，这是我的习惯，我希望告诉她我将要做什么，让她放心。结果，她跟我说不要上班，然后我就说爸爸不去上班就没有前给她买漂亮衣服了，她说不要漂亮衣服了。。我再说不去上班就没钱买肉肉给她吃了，她说不吃了。太好玩，也太心酸，我真的希望能陪着她一起成长，更希望我们一家人天天在一起，这种四处奔波、两地分离的日子，太难受了。这不是我想要的生活。女儿、老婆都希望我们一家人待在一起，我只能在外面跑。。太难受了。。早点结束这种日子吧。。2岁4个月3天。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>成长</category>
+      </categories>
+      <tags>
+        <tag>成长</tag>
+        <tag>家庭</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>足球</title>
+    <url>/2021/01/24/%E8%B6%B3%E7%90%83/</url>
+    <content><![CDATA[<p>足球应该是我最喜欢的运动的，还记得小学五年级快要毕业的时候，在操场上用篮球来踢，那算是第一次接触“足球”。也许这就是缘分，上了初一之后就开始踢球了。</p>
+<span id="more"></span>
+
+<ul>
+<li>好久没看英超了，阿森纳都那么多长没赢了。难得看下，终于赢了，而且赢的是车子，感觉就是不一样。全场看来精神状态不一样了，对于足球比赛来说，没有斗志是很难看的。成年球星的动力跟年轻的是不一样。</li>
+<li>今年一整年都是忙，都没有什么时间踢球，一年就踢了2次。本以为回到老家了，可以工作轻松点，还能踢踢球，结果刚好相反，工作忙到不得了，体育运动还没得怎么样。。当然了，就去踢的那么两次，也是体力完全透支，体会到什么叫10分钟体力了。上场站几分钟都觉得累那种。</li>
+<li>想起几年前在宁波的日子，周末基本有球踢，那是潇洒。但是这种代价是相互的，每个人都时间都是一样的，在一件事情是耗费的时间多了，另外的事就没有那么多精力了。所谓得失是平衡的，凡事得适度。人生的每个阶段都有不同的侧重点，没办法苛求那么多。</li>
+<li>上周末去南宁参加积极运动年赛，想起来2020年就踢了2次，上次踢球好像都是半年前的事了。结果，这秋踢得浑身疼痛，走路都麻烦。但是感觉人的精神好多了，没有之前那么精神萎靡的样子，看来还是需要多运动才行。</li>
+<li>昨晚跟设计院吃饭，居然最后聊到足球上来，说到要组队来跟我们踢一场，说得蠢蠢欲动。。真有这样的活动还是很不错的，保持出出汗，精神倍爽。2021/1/26</li>
+<li>昨晚没看阿森纳的比赛，心里想着应该不会输，应该会应1-2个球，结果，平了。。然后被淘汰了。心里不是滋味，喜欢的球队被淘汰终究不是好事。今天看了一下前20多分钟，感觉球员不是很兴奋，而且都没什么纵深的传球，直传太少了，没有杀伤性。奥巴也不是我喜欢的这种战术的前锋，如果有强大的中场，奥巴很适合，但是没有，就需要想亨利、范佩西那样的中锋，能拿球能创造机会，一个人能解决问题，但是奥巴不具备这样的能力。都不如跟西汉姆那场联赛踢得好。也许又是到了改变的时候了。2021/5/7</li>
+</ul>
+]]></content>
+      <categories>
+        <category>体育</category>
+      </categories>
+      <tags>
+        <tag>足球</tag>
+      </tags>
+  </entry>
+</search>
