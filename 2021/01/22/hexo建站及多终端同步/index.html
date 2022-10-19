@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"svtyy.me","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo建站及多终端同步">
-<meta property="og:url" content="http://example.com/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/index.html">
+<meta property="og:url" content="https://svtyy.me/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/index.html">
 <meta property="og:site_name" content="Svt&#39;s人间观察">
 <meta property="og:description" content="上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。">
 <meta property="og:locale" content="zh_CN">
@@ -33,7 +33,7 @@
 <meta property="article:tag" content="网站">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/">
+<link rel="canonical" href="https://svtyy.me/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/">
 
 
 <script id="page-configurations">
@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/">
+    <link itemprop="mainEntityOfPage" href="https://svtyy.me/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -301,10 +301,10 @@
 <ul>
 <li>git config –global user.name XXX   # XXX表示github注册时的用户名。</li>
 <li>git config –global user.email XXX  # XXX表示github注册时的邮箱。</li>
-<li>ssh-keygen -t rsa -C <a href="mailto:&#x58;&#x58;&#x58;&#x40;&#x58;&#x58;&#x58;&#x2e;&#x63;&#111;&#109;">&#x58;&#x58;&#x58;&#x40;&#x58;&#x58;&#x58;&#x2e;&#x63;&#111;&#109;</a> # <a href="mailto:&#88;&#88;&#88;&#x40;&#88;&#x58;&#88;&#x2e;&#x63;&#x6f;&#109;">&#88;&#88;&#88;&#x40;&#88;&#x58;&#88;&#x2e;&#x63;&#x6f;&#109;</a>指的是注册github时候使用的邮箱。</li>
+<li>ssh-keygen -t rsa -C <a href="mailto:&#88;&#88;&#x58;&#x40;&#x58;&#88;&#x58;&#46;&#99;&#111;&#x6d;">&#88;&#88;&#x58;&#x40;&#x58;&#88;&#x58;&#46;&#99;&#111;&#x6d;</a> # <a href="mailto:&#x58;&#88;&#x58;&#x40;&#88;&#x58;&#88;&#x2e;&#x63;&#x6f;&#109;">&#x58;&#88;&#x58;&#x40;&#88;&#x58;&#88;&#x2e;&#x63;&#x6f;&#109;</a>指的是注册github时候使用的邮箱。</li>
 <li>在命令执行的时候回有一些yes、no的选择，直接默认回车。之后将在c/Users/you/.ssh/id_rsa.pub路径文件看到生成的秘钥对，用记事本打开，之后复制。</li>
 <li>将ssh key添加到我们的github账户。在个人github主页找到settings，然后点击SSH and GPG keys，之后再出现的页面的中点击New SSH key。名字随意，将复制到的id_rsa.pub粘贴到key，点击Add SSH key即可。</li>
-<li>检查证书是否配置成功：打开git bash here，执行ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#109;">&#x67;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#46;&#99;&#111;&#109;</a></li>
+<li>检查证书是否配置成功：打开git bash here，执行ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a></li>
 </ul>
 <p>以上即完成基本环境的布置，接下来就是hexo博客的搭建了。</p>
 </li>
@@ -349,7 +349,7 @@
 <h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><ul>
 <li><p>跟之前建站的时候一样，只是改为私有，名称为hexo，其他默认。得到仓库地址：git@github:xxx/hexo.git。执行以上命令之前，先把主题文件夹下的.git文件夹删除（可能隐藏），我就因为没有删除有折腾了N久。</p>
 </li>
-<li><p>在本地hexo仓库下执行：git remote add origin <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a>:xxx/hexo.git</p>
+<li><p>在本地hexo仓库下执行：git remote add origin <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:xxx/hexo.git</p>
 </li>
 <li><p>执行：git remote -v，查看仓库是否连接成功。</p>
 </li>
@@ -357,7 +357,7 @@
 </li>
 <li><p>执行：git branch -M master</p>
 </li>
-<li><p>执行：git remote add origin <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#105;&#116;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:svtyy/hexo.git</p>
+<li><p>执行：git remote add origin <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#x40;&#x67;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:svtyy/hexo.git</p>
 </li>
 <li><p>执行：git push -u origin master</p>
 </li>
@@ -368,7 +368,7 @@
 </ul>
 <h4 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h4><p>换台电脑的时候就可以从远程仓库直接克隆下来，实现多终端操作。</p>
 <ul>
-<li>在本地想要存放仓库的位置执行：git clone <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#x63;&#x6f;&#109;</a>:xxx/hexo.git</li>
+<li>在本地想要存放仓库的位置执行：git clone <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#x62;&#46;&#x63;&#111;&#109;</a>:xxx/hexo.git</li>
 </ul>
 <h4 id="终端同步"><a href="#终端同步" class="headerlink" title="终端同步"></a>终端同步</h4><ul>
 <li>任意终端完成修改后：</li>
