@@ -22,6 +22,47 @@
       </tags>
   </entry>
   <entry>
+    <title>Github Actions自动部署博客</title>
+    <url>/2021/01/27/Github%20Actions%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>居然自动部署成功了，突然觉得好有成就感啊。我觉得我好容易满足啊，真正体会什么是知足常乐，是不是也算是小确幸。开心还是得发自内心的。</p>
+<span id="more"></span>
+
+<h4 id="添加密钥对"><a href="#添加密钥对" class="headerlink" title="添加密钥对"></a>添加密钥对</h4><ul>
+<li>在私有仓库中，将本地生成的私钥的内容<code>Settings &gt; Secrets</code>作为DEPLOY_KEY添加到菜单中，名称为DEPLOY_KEY。</li>
+</ul>
+<h4 id="部署workflow"><a href="#部署workflow" class="headerlink" title="部署workflow"></a>部署workflow</h4><ul>
+<li>点击博客源码仓库的Action，创建workflow，名称随意。参考：<a href="https://www.heson10.com/posts/61031.html">原文</a> </li>
+<li>我用的代码，<a href="https://github.com/marketplace/actions/hexo-action">原文</a> ，修改为自己的用户名和邮箱。</li>
+<li>点击Action查看部署状态，都绿意味着部署成功了。</li>
+</ul>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>编写完成文章后，直接推送修改的文件到博客源码仓库，三条命令：</p>
+<ol>
+<li>git add .</li>
+<li>git commit -m “博文名称”</li>
+<li>git push </li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>基本步骤：</p>
+<ul>
+<li>使用Github令牌部署hexo博客</li>
+<li>Github新建一个私有仓库，并上传hexo博客源码</li>
+<li>配置Github Action实现自动化部署</li>
+</ul>
+<p>感谢以上两位作者，版权归引文的两位作者所有。衷心感谢！</p>
+<h4 id="自动部署的问题"><a href="#自动部署的问题" class="headerlink" title="自动部署的问题"></a>自动部署的问题</h4><ol>
+<li>自动部署丢失自定义域名：把CNAME文件放到hexo根目录sourece文件夹下。</li>
+</ol>
+<h4 id="取消自动部署"><a href="#取消自动部署" class="headerlink" title="取消自动部署"></a>取消自动部署</h4><ul>
+<li>无语了，每次更新博文，没更新的博文也跟着日期更新了。这自动部署怎么是这样的，为什么部署更新什么就部署什么，每次博文都是一团乱，不再是按更新时间排序了。原谅我这个拿来主义者，搞不懂为什么。。还是算了，就多几个步骤吧。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>网站搭建</category>
+      </categories>
+      <tags>
+        <tag>自动部署</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>R2S旁路由</title>
     <url>/2021/05/13/R2S%E6%97%81%E8%B7%AF%E7%94%B1/</url>
     <content><![CDATA[<h2 id="1-写入固件"><a href="#1-写入固件" class="headerlink" title="1.写入固件"></a>1.写入固件</h2><p>和树莓派一样，友善R2S也是没有内置存储空间的，系统需要通过SD卡引导使用。<span id="more"></span></p>
@@ -59,6 +100,149 @@
       </categories>
       <tags>
         <tag>旁路由</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ubuntu+win双系统修改启动项方法</title>
+    <url>/2022/10/17/ubuntu+win%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8%E9%A1%B9%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>在安装了双系统的电脑上，我们有时需要将经常使用的系统设置为默认进入的系统，设置方法如下：</p>
+<span id="more"></span>
+
+<ol>
+<li>首先进入Ubuntu系统环境下。</li>
+<li>打开终端。</li>
+<li>输入sudo gedit /etc/default/grub，并根据提示输入密码。</li>
+<li>在打开后的文本文件中修改GRUB_DEFAULT的默认值，原来是0，表示Ubuntu系统，若需要修改为Windows，则需要将数字修改为开机时Windows所在的位置。因为Ubuntu在第一个位置，所以数字0表示它，我的Windows在第三个位置，所以我将数字修改为2，你需要查看自己Windows系统所在的位置，可能有所不同。</li>
+<li>将GRUB_DEFAULT的值改为2之后，我们保存并关闭刚刚打开的文本文件。</li>
+<li>再在终端输入命令：sudo update-grub，表示刷新并更改开机启动设置。这时再关闭电脑重新打开，系统选择洁面就会默认选择Windows系统。</li>
+</ol>
+<p><a href="https://creativecommons.org/licenses/by-sa/4.0/"></a>版权声明：本文为博主原创文章，本文链接：<a href="https://blog.csdn.net/gaishi_hero/article/details/87178123">ubuntu + windows双系统默认启动项修改方法_gaishi_hero的博客-CSDN博客</a></p>
+]]></content>
+      <categories>
+        <category>电脑</category>
+      </categories>
+      <tags>
+        <tag>双系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo建站及多终端同步</title>
+    <url>/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/</url>
+    <content><![CDATA[<p>上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。<span id="more"></span></p>
+<p>可能还是有强迫症，脑子里一直有这个声音，不完成不罢休。所以干脆重新做了。这次终于成功备份到私有仓库。中间经历的非常多的错误，如取消远程关联、切换分支、主题没有备份等等，也许对专业的人来说太简单的问题了，但对我来说就是天书一样。还好有强大的Google，不断的查找答案，不断的修正，终于搞定。</p>
+<p>这显然不是什么教程，只是我不断的试错之后得到的属于我个人的总结，只是不希望以后遇到什么需要重新来过的时候，又满网络去Google。我太难了。。。</p>
+<h3 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><ol>
+<li>安装必备环境：</li>
+</ol>
+<ul>
+<li>安装git：<a href="https://git-scm.com/%EF%BC%8C%E5%B0%86%E5%85%B6%E4%B8%8B%E8%BD%BD%EF%BC%8C%E7%84%B6%E5%90%8EWindows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%97%A0%E8%84%91%E5%BC%8F%E5%AE%89%E8%A3%85%EF%BC%88%E4%B8%80%E8%B7%AFenter%E5%88%B0%E5%BA%95%EF%BC%89%E3%80%82%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E6%89%93%E5%BC%80cmd%E7%BB%88%E7%AB%AF%EF%BC%88win+r">https://git-scm.com/，将其下载，然后Windows系统下无脑式安装（一路enter到底）。安装好后打开cmd终端（win+r</a> -&gt; 输入cmd -&gt; 回车），执行<code>git --version</code>，若出现<code>git version 2.19.2.windows.1</code>之类的版本输出，就表示已经成功安装。<ul>
+<li>安装node.js：<a href="https://nodejs.org/zh-cn/%EF%BC%8Cnode.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8CGit%E7%9A%84%E5%AE%89%E8%A3%85%E5%A6%82%E5%87%BA%E4%B8%80%E8%BE%99%EF%BC%8C%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E5%9C%A8cmd%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%60node">https://nodejs.org/zh-cn/，node.js的安装和Git的安装如出一辙，安装好后在cmd终端使用`node</a> -version<code>命令，如出现</code>v12.20.1<code>类似输出，则说明已经成功安装。（安装</code>v12.20.1`可以减少一点麻烦）</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><p>创建仓库：</p>
+<ul>
+<li>注册 <code>GitHub：github.com</code> 。</li>
+<li>创建仓库，一般形式为：xxx.github.io。xxx用GitHub的用户名。勾选是否为仓库生成一个readme.md文件。</li>
+<li>点击<code>create repository</code> 完成生成仓库。</li>
+</ul>
+</li>
+<li><p>创建密钥及部署证书：在任意位置鼠标右键选择<code>git bash here</code>，然后在git终端执行以下命令：</p>
+<ul>
+<li>git config –global user.name XXX   # XXX表示github注册时的用户名。</li>
+<li>git config –global user.email XXX  # XXX表示github注册时的邮箱。</li>
+<li>ssh-keygen -t rsa -C <a href="mailto:&#88;&#x58;&#88;&#x40;&#88;&#88;&#88;&#46;&#x63;&#x6f;&#109;">&#88;&#x58;&#88;&#x40;&#88;&#88;&#88;&#46;&#x63;&#x6f;&#109;</a> # <a href="mailto:&#88;&#88;&#88;&#x40;&#88;&#88;&#x58;&#46;&#x63;&#111;&#109;">&#88;&#88;&#88;&#x40;&#88;&#88;&#x58;&#46;&#x63;&#111;&#109;</a>指的是注册github时候使用的邮箱。</li>
+<li>在命令执行的时候回有一些yes、no的选择，直接默认回车。之后将在c/Users/you/.ssh/id_rsa.pub路径文件看到生成的秘钥对，用记事本打开，之后复制。</li>
+<li>将ssh key添加到我们的github账户。在个人github主页找到settings，然后点击SSH and GPG keys，之后再出现的页面的中点击New SSH key。名字随意，将复制到的id_rsa.pub粘贴到key，点击Add SSH key即可。</li>
+<li>检查证书是否配置成功：打开git bash here，执行ssh -T <a href="mailto:&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;">&#x67;&#105;&#116;&#x40;&#x67;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#109;</a></li>
+</ul>
+<p>以上即完成基本环境的布置，接下来就是hexo博客的搭建了。</p>
+</li>
+</ol>
+<h4 id="hexo搭建-1"><a href="#hexo搭建-1" class="headerlink" title="hexo搭建"></a>hexo搭建</h4><ul>
+<li><p>首先安装Hexo。根据需要在磁盘中创建一个名为hexo文件夹。之后进入该文件并在当前路径下打开git bash here，依次运行如下命令来进行搭建hexo环境：</p>
+<ol>
+<li>npm install hexo-cli -g</li>
+<li>npm install hexo –save</li>
+</ol>
+</li>
+<li><p>执行Hexo –version，出现一堆的版本信息说明就配置成功了。</p>
+</li>
+<li><p>初始化hexo：hexo init。</p>
+</li>
+<li><p>网站所需组件：npm install。</p>
+<p>稍等片刻即可完成所有的安装步骤，至此，一个基本的Hexo博客框架已经完成了，现在只需要最后一步了：导入喜欢的博客主题即可正常使用了。本人喜欢next主题，所以。。。</p>
+</li>
+</ul>
+<h4 id="导入主题"><a href="#导入主题" class="headerlink" title="导入主题"></a>导入主题</h4><ul>
+<li><p>在hexo文件夹下，右键点击git bash here，并执行如下命令：git clone <a href="https://github.com/theme-next/hexo-theme-next.git%E3%80%82">https://github.com/theme-next/hexo-theme-next.git。</a></p>
+</li>
+<li><p>用文本编辑器编辑网站配置文件_config.yml，将theme改为next。</p>
+</li>
+<li><p>操作完成之后，完成如下三步命令：</p>
+<ol>
+<li>hexo clean：清除缓存</li>
+<li>hexo g：生成静态页面</li>
+<li>hexo s：本地预览页面</li>
+<li>hexo d：将资源提交到服务器中</li>
+</ol>
+</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
+<li>安装环境变量及配置。</li>
+<li>创建GitHub仓库。</li>
+<li>配置证书。</li>
+<li>部署hexo。</li>
+<li>导入自己喜欢的主题。</li>
+</ol>
+<h3 id="多终端同步"><a href="#多终端同步" class="headerlink" title="多终端同步"></a>多终端同步</h3><p>为了源码安全及写作方便，多终端同步是有必要的。搜索了很多方法，说的最多的是设置分支的方法，总感觉差那么一点意思。后来发现创建私有仓库的方法，这也是之前放弃的原因，太难了。。还好经过不断的摸索，总算解决了。。</p>
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><ul>
+<li><p>跟之前建站的时候一样，只是改为私有，名称为hexo，其他默认。得到仓库地址：git@github:xxx/hexo.git。执行以上命令之前，先把主题文件夹下的.git文件夹删除（可能隐藏），我就因为没有删除有折腾了N久。</p>
+</li>
+<li><p>在本地hexo仓库下执行：git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#109;</a>:xxx/hexo.git</p>
+</li>
+<li><p>执行：git remote -v，查看仓库是否连接成功。</p>
+</li>
+<li><p>执行：git commit -m “first commit”</p>
+</li>
+<li><p>执行：git branch -M master</p>
+</li>
+<li><p>执行：git remote add origin <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:svtyy/hexo.git</p>
+</li>
+<li><p>执行：git push -u origin master</p>
+</li>
+</ul>
+<p>完成以上操作应该会把源码推送到远程仓库了。</p>
+<ul>
+<li>解除关联远程分支：git remote remove origin</li>
+</ul>
+<h4 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h4><p>换台电脑的时候就可以从远程仓库直接克隆下来，实现多终端操作。</p>
+<ul>
+<li>在本地想要存放仓库的位置执行：git clone <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:xxx/hexo.git</li>
+</ul>
+<h4 id="终端同步"><a href="#终端同步" class="headerlink" title="终端同步"></a>终端同步</h4><ul>
+<li>任意终端完成修改后：</li>
+</ul>
+<ol>
+<li>hexo clean </li>
+<li>hexo g    </li>
+<li>hexo s    </li>
+<li>hexo d    </li>
+<li>git add .   </li>
+<li>git commit -m “更新源文件” </li>
+<li>git push origin master </li>
+<li>git pull origin master </li>
+</ol>
+<p>我的就是这样完成了搭建和多终端同步，不知道是不是任何时候都可以按照做完成，也不知道是不是可以省略掉哪些步骤，或者还有哪里是可以完善的，只能靠以后不断的摸索了。当然，那不是我的初衷，我只是想用这个工具，懂得操作就行，它是怎么运作，原理是什么关心不上了。在这个过程中，参考了非常多的博文，十分感谢！</p>
+<p>​      </p>
+<p>​     </p>
+]]></content>
+      <categories>
+        <category>网站搭建</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -174,185 +358,26 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo建站及多终端同步</title>
-    <url>/2021/01/22/hexo%E5%BB%BA%E7%AB%99%E5%8F%8A%E5%A4%9A%E7%BB%88%E7%AB%AF%E5%90%8C%E6%AD%A5/</url>
-    <content><![CDATA[<p>上周看到hexo+GitHub建站是可以免费的，看到免费就来了精神，虽然购买虚拟服务器也不用多少钱，但是还是觉得免费的可以研究，也许是喜欢这种探索的过程吧。中间确实也是失败了，建站是很简单，看着教程一会就可以学会，而且成功建成。也通过设置分支的方式把源码备份到GitHub，但是总觉得不够完美，想把源码备份到私有仓库感觉才算完美。最终折腾了几天还是没成功，一气之下就打算放弃了，把所有的资料都删了。<span id="more"></span></p>
-<p>可能还是有强迫症，脑子里一直有这个声音，不完成不罢休。所以干脆重新做了。这次终于成功备份到私有仓库。中间经历的非常多的错误，如取消远程关联、切换分支、主题没有备份等等，也许对专业的人来说太简单的问题了，但对我来说就是天书一样。还好有强大的Google，不断的查找答案，不断的修正，终于搞定。</p>
-<p>这显然不是什么教程，只是我不断的试错之后得到的属于我个人的总结，只是不希望以后遇到什么需要重新来过的时候，又满网络去Google。我太难了。。。</p>
-<h3 id="hexo搭建"><a href="#hexo搭建" class="headerlink" title="hexo搭建"></a>hexo搭建</h3><h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><ol>
-<li>安装必备环境：</li>
-</ol>
-<ul>
-<li>安装git：<a href="https://git-scm.com/%EF%BC%8C%E5%B0%86%E5%85%B6%E4%B8%8B%E8%BD%BD%EF%BC%8C%E7%84%B6%E5%90%8EWindows%E7%B3%BB%E7%BB%9F%E4%B8%8B%E6%97%A0%E8%84%91%E5%BC%8F%E5%AE%89%E8%A3%85%EF%BC%88%E4%B8%80%E8%B7%AFenter%E5%88%B0%E5%BA%95%EF%BC%89%E3%80%82%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E6%89%93%E5%BC%80cmd%E7%BB%88%E7%AB%AF%EF%BC%88win+r">https://git-scm.com/，将其下载，然后Windows系统下无脑式安装（一路enter到底）。安装好后打开cmd终端（win+r</a> -&gt; 输入cmd -&gt; 回车），执行<code>git --version</code>，若出现<code>git version 2.19.2.windows.1</code>之类的版本输出，就表示已经成功安装。<ul>
-<li>安装node.js：<a href="https://nodejs.org/zh-cn/%EF%BC%8Cnode.js%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8CGit%E7%9A%84%E5%AE%89%E8%A3%85%E5%A6%82%E5%87%BA%E4%B8%80%E8%BE%99%EF%BC%8C%E5%AE%89%E8%A3%85%E5%A5%BD%E5%90%8E%E5%9C%A8cmd%E7%BB%88%E7%AB%AF%E4%BD%BF%E7%94%A8%60node">https://nodejs.org/zh-cn/，node.js的安装和Git的安装如出一辙，安装好后在cmd终端使用`node</a> -version<code>命令，如出现</code>v12.20.1<code>类似输出，则说明已经成功安装。（安装</code>v12.20.1`可以减少一点麻烦）</li>
-</ul>
-</li>
-</ul>
-<ol start="2">
-<li><p>创建仓库：</p>
-<ul>
-<li>注册 <code>GitHub：github.com</code> 。</li>
-<li>创建仓库，一般形式为：xxx.github.io。xxx用GitHub的用户名。勾选是否为仓库生成一个readme.md文件。</li>
-<li>点击<code>create repository</code> 完成生成仓库。</li>
-</ul>
-</li>
-<li><p>创建密钥及部署证书：在任意位置鼠标右键选择<code>git bash here</code>，然后在git终端执行以下命令：</p>
-<ul>
-<li>git config –global user.name XXX   # XXX表示github注册时的用户名。</li>
-<li>git config –global user.email XXX  # XXX表示github注册时的邮箱。</li>
-<li>ssh-keygen -t rsa -C <a href="mailto:&#88;&#x58;&#88;&#x40;&#88;&#88;&#88;&#x2e;&#x63;&#111;&#109;">&#88;&#x58;&#88;&#x40;&#88;&#88;&#88;&#x2e;&#x63;&#111;&#109;</a> # <a href="mailto:&#x58;&#88;&#88;&#64;&#88;&#88;&#x58;&#x2e;&#x63;&#111;&#109;">&#x58;&#88;&#88;&#64;&#88;&#88;&#x58;&#x2e;&#x63;&#111;&#109;</a>指的是注册github时候使用的邮箱。</li>
-<li>在命令执行的时候回有一些yes、no的选择，直接默认回车。之后将在c/Users/you/.ssh/id_rsa.pub路径文件看到生成的秘钥对，用记事本打开，之后复制。</li>
-<li>将ssh key添加到我们的github账户。在个人github主页找到settings，然后点击SSH and GPG keys，之后再出现的页面的中点击New SSH key。名字随意，将复制到的id_rsa.pub粘贴到key，点击Add SSH key即可。</li>
-<li>检查证书是否配置成功：打开git bash here，执行ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#99;&#111;&#109;</a></li>
-</ul>
-<p>以上即完成基本环境的布置，接下来就是hexo博客的搭建了。</p>
-</li>
-</ol>
-<h4 id="hexo搭建-1"><a href="#hexo搭建-1" class="headerlink" title="hexo搭建"></a>hexo搭建</h4><ul>
-<li><p>首先安装Hexo。根据需要在磁盘中创建一个名为hexo文件夹。之后进入该文件并在当前路径下打开git bash here，依次运行如下命令来进行搭建hexo环境：</p>
-<ol>
-<li>npm install hexo-cli -g</li>
-<li>npm install hexo –save</li>
-</ol>
-</li>
-<li><p>执行Hexo –version，出现一堆的版本信息说明就配置成功了。</p>
-</li>
-<li><p>初始化hexo：hexo init。</p>
-</li>
-<li><p>网站所需组件：npm install。</p>
-<p>稍等片刻即可完成所有的安装步骤，至此，一个基本的Hexo博客框架已经完成了，现在只需要最后一步了：导入喜欢的博客主题即可正常使用了。本人喜欢next主题，所以。。。</p>
-</li>
-</ul>
-<h4 id="导入主题"><a href="#导入主题" class="headerlink" title="导入主题"></a>导入主题</h4><ul>
-<li><p>在hexo文件夹下，右键点击git bash here，并执行如下命令：git clone <a href="https://github.com/theme-next/hexo-theme-next.git%E3%80%82">https://github.com/theme-next/hexo-theme-next.git。</a></p>
-</li>
-<li><p>用文本编辑器编辑网站配置文件_config.yml，将theme改为next。</p>
-</li>
-<li><p>操作完成之后，完成如下三步命令：</p>
-<ol>
-<li>hexo clean：清除缓存</li>
-<li>hexo g：生成静态页面</li>
-<li>hexo s：本地预览页面</li>
-<li>hexo d：将资源提交到服务器中</li>
-</ol>
-</li>
-</ul>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ol>
-<li>安装环境变量及配置。</li>
-<li>创建GitHub仓库。</li>
-<li>配置证书。</li>
-<li>部署hexo。</li>
-<li>导入自己喜欢的主题。</li>
-</ol>
-<h3 id="多终端同步"><a href="#多终端同步" class="headerlink" title="多终端同步"></a>多终端同步</h3><p>为了源码安全及写作方便，多终端同步是有必要的。搜索了很多方法，说的最多的是设置分支的方法，总感觉差那么一点意思。后来发现创建私有仓库的方法，这也是之前放弃的原因，太难了。。还好经过不断的摸索，总算解决了。。</p>
-<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><ul>
-<li><p>跟之前建站的时候一样，只是改为私有，名称为hexo，其他默认。得到仓库地址：git@github:xxx/hexo.git。执行以上命令之前，先把主题文件夹下的.git文件夹删除（可能隐藏），我就因为没有删除有折腾了N久。</p>
-</li>
-<li><p>在本地hexo仓库下执行：git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a>:xxx/hexo.git</p>
-</li>
-<li><p>执行：git remote -v，查看仓库是否连接成功。</p>
-</li>
-<li><p>执行：git commit -m “first commit”</p>
-</li>
-<li><p>执行：git branch -M master</p>
-</li>
-<li><p>执行：git remote add origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#105;&#x74;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#109;</a>:svtyy/hexo.git</p>
-</li>
-<li><p>执行：git push -u origin master</p>
-</li>
-</ul>
-<p>完成以上操作应该会把源码推送到远程仓库了。</p>
-<ul>
-<li>解除关联远程分支：git remote remove origin</li>
-</ul>
-<h4 id="从远程仓库克隆"><a href="#从远程仓库克隆" class="headerlink" title="从远程仓库克隆"></a>从远程仓库克隆</h4><p>换台电脑的时候就可以从远程仓库直接克隆下来，实现多终端操作。</p>
-<ul>
-<li>在本地想要存放仓库的位置执行：git clone <a href="mailto:&#103;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#x67;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a>:xxx/hexo.git</li>
-</ul>
-<h4 id="终端同步"><a href="#终端同步" class="headerlink" title="终端同步"></a>终端同步</h4><ul>
-<li>任意终端完成修改后：</li>
-</ul>
-<ol>
-<li>hexo clean </li>
-<li>hexo g    </li>
-<li>hexo s    </li>
-<li>hexo d    </li>
-<li>git add .   </li>
-<li>git commit -m “更新源文件” </li>
-<li>git push origin master </li>
-<li>git pull origin master </li>
-</ol>
-<p>我的就是这样完成了搭建和多终端同步，不知道是不是任何时候都可以按照做完成，也不知道是不是可以省略掉哪些步骤，或者还有哪里是可以完善的，只能靠以后不断的摸索了。当然，那不是我的初衷，我只是想用这个工具，懂得操作就行，它是怎么运作，原理是什么关心不上了。在这个过程中，参考了非常多的博文，十分感谢！</p>
-<p>​      </p>
-<p>​     </p>
-]]></content>
-      <categories>
-        <category>网站搭建</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github Actions自动部署博客</title>
-    <url>/2021/01/27/Github%20Actions%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<p>居然自动部署成功了，突然觉得好有成就感啊。我觉得我好容易满足啊，真正体会什么是知足常乐，是不是也算是小确幸。开心还是得发自内心的。</p>
+    <title>“番茄”那一点点事</title>
+    <url>/2021/01/25/%E2%80%9C%E7%95%AA%E8%8C%84%E2%80%9D%E9%82%A3%E4%B8%80%E7%82%B9%E7%82%B9%E4%BA%8B/</url>
+    <content><![CDATA[<p>出海冲浪目的就是工作、学习和娱乐，不要违反相关法律法规。</p>
 <span id="more"></span>
 
-<h4 id="添加密钥对"><a href="#添加密钥对" class="headerlink" title="添加密钥对"></a>添加密钥对</h4><ul>
-<li>在私有仓库中，将本地生成的私钥的内容<code>Settings &gt; Secrets</code>作为DEPLOY_KEY添加到菜单中，名称为DEPLOY_KEY。</li>
-</ul>
-<h4 id="部署workflow"><a href="#部署workflow" class="headerlink" title="部署workflow"></a>部署workflow</h4><ul>
-<li>点击博客源码仓库的Action，创建workflow，名称随意。参考：<a href="https://www.heson10.com/posts/61031.html">原文</a> </li>
-<li>我用的代码，<a href="https://github.com/marketplace/actions/hexo-action">原文</a> ，修改为自己的用户名和邮箱。</li>
-<li>点击Action查看部署状态，都绿意味着部署成功了。</li>
-</ul>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>编写完成文章后，直接推送修改的文件到博客源码仓库，三条命令：</p>
-<ol>
-<li>git add .</li>
-<li>git commit -m “博文名称”</li>
-<li>git push </li>
-</ol>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>基本步骤：</p>
 <ul>
-<li>使用Github令牌部署hexo博客</li>
-<li>Github新建一个私有仓库，并上传hexo博客源码</li>
-<li>配置Github Action实现自动化部署</li>
-</ul>
-<p>感谢以上两位作者，版权归引文的两位作者所有。衷心感谢！</p>
-<h4 id="自动部署的问题"><a href="#自动部署的问题" class="headerlink" title="自动部署的问题"></a>自动部署的问题</h4><ol>
-<li>自动部署丢失自定义域名：把CNAME文件放到hexo根目录sourece文件夹下。</li>
-</ol>
-<h4 id="取消自动部署"><a href="#取消自动部署" class="headerlink" title="取消自动部署"></a>取消自动部署</h4><ul>
-<li>无语了，每次更新博文，没更新的博文也跟着日期更新了。这自动部署怎么是这样的，为什么部署更新什么就部署什么，每次博文都是一团乱，不再是按更新时间排序了。原谅我这个拿来主义者，搞不懂为什么。。还是算了，就多几个步骤吧。</li>
+<li>自由访问Google的日子真是嗨，可惜了退出了国内市场。在国内也是够挣扎的。能活着真是不容易，即使再怎么用心也是没有用的，在利益面前一切都是浮云。。百度真是渣渣，而且还额度。。</li>
+<li>好长一段时间用黑莓手机，偶然的机会看到iqlink，保持着一直可以访问Google，好像使用黑莓也只能用iqlink。但是速度实在不敢恭维，这持续了好几年。直到19年偶然机会看到了“庭说”，才知道还有机场，用了一下，速度真的是飞起来，比iqlink快太多了。可以畅快的使用Google、gmail等等应用。更重要的是可以搜索都更多有用的应用。</li>
+<li>再后来就发现了一键部署这个事了。。</li>
+<li>发现自己跑偏了，如果没有那堵墙该多好，不用那么多工具。但是生活就是这样无奈的，接受当下的一切，活在当下才是真的。即使吃了番茄出了海，也不见得怎么样，学习才是最重要的。理性的分辨不同的声音。</li>
+<li>谷歌云真的是快啊，台湾的节点速度刚刚的，4k秒开。就是除了免费的体验，价格实在太高了，目前这个节点实在是用不上。</li>
+<li>既然已经跑出来了，那就用telegraph呗。使用方法 <a href="https://tingtalk.me/telegram/">庭说</a>，很详细。我感觉我是看了庭说之后才感觉是跑出来是有意思的。</li>
+<li>感觉自己搭梯子也腻了，还是机场比较稳固，而且速度也不错。走着看吧。</li>
 </ul>
 ]]></content>
       <categories>
-        <category>网站搭建</category>
+        <category>番茄</category>
       </categories>
       <tags>
-        <tag>自动部署</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ubuntu+win双系统修改启动项方法</title>
-    <url>/2022/10/17/ubuntu+win%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8%E9%A1%B9%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>在安装了双系统的电脑上，我们有时需要将经常使用的系统设置为默认进入的系统，设置方法如下：</p>
-<ol>
-<li>首先进入Ubuntu系统环境下。</li>
-<li>打开终端。</li>
-<li>输入sudo gedit /etc/default/grub，并根据提示输入密码。</li>
-<li>在打开后的文本文件中修改GRUB_DEFAULT的默认值，原来是0，表示Ubuntu系统，若需要修改为Windows，则需要将数字修改为开机时Windows所在的位置。因为Ubuntu在第一个位置，所以数字0表示它，我的Windows在第三个位置，所以我将数字修改为2，你需要查看自己Windows系统所在的位置，可能有所不同。</li>
-<li>将GRUB_DEFAULT的值改为2之后，我们保存并关闭刚刚打开的文本文件。</li>
-<li>再在终端输入命令：sudo update-grub，表示刷新并更改开机启动设置。这时再关闭电脑重新打开，系统选择洁面就会默认选择Windows系统。</li>
-</ol>
-<p><a href="https://creativecommons.org/licenses/by-sa/4.0/"></a>版权声明：本文为博主原创文章，本文链接：<a href="https://blog.csdn.net/gaishi_hero/article/details/87178123">ubuntu + windows双系统默认启动项修改方法_gaishi_hero的博客-CSDN博客</a></p>
-]]></content>
-      <categories>
-        <category>电脑</category>
-      </categories>
-      <tags>
-        <tag>双系统</tag>
+        <tag>番茄</tag>
       </tags>
   </entry>
   <entry>
@@ -386,27 +411,10 @@
       </tags>
   </entry>
   <entry>
-    <title>“番茄”那一点点事</title>
-    <url>/2021/01/25/%E2%80%9C%E7%95%AA%E8%8C%84%E2%80%9D%E9%82%A3%E4%B8%80%E7%82%B9%E7%82%B9%E4%BA%8B/</url>
-    <content><![CDATA[<p>出海冲浪目的就是工作、学习和娱乐，不要违反相关法律法规。</p>
-<span id="more"></span>
-
-<ul>
-<li>自由访问Google的日子真是嗨，可惜了退出了国内市场。在国内也是够挣扎的。能活着真是不容易，即使再怎么用心也是没有用的，在利益面前一切都是浮云。。百度真是渣渣，而且还额度。。</li>
-<li>好长一段时间用黑莓手机，偶然的机会看到iqlink，保持着一直可以访问Google，好像使用黑莓也只能用iqlink。但是速度实在不敢恭维，这持续了好几年。直到19年偶然机会看到了“庭说”，才知道还有机场，用了一下，速度真的是飞起来，比iqlink快太多了。可以畅快的使用Google、gmail等等应用。更重要的是可以搜索都更多有用的应用。</li>
-<li>再后来就发现了一键部署这个事了。。</li>
-<li>发现自己跑偏了，如果没有那堵墙该多好，不用那么多工具。但是生活就是这样无奈的，接受当下的一切，活在当下才是真的。即使吃了番茄出了海，也不见得怎么样，学习才是最重要的。理性的分辨不同的声音。</li>
-<li>谷歌云真的是快啊，台湾的节点速度刚刚的，4k秒开。就是除了免费的体验，价格实在太高了，目前这个节点实在是用不上。</li>
-<li>既然已经跑出来了，那就用telegraph呗。使用方法 <a href="https://tingtalk.me/telegram/">庭说</a>，很详细。我感觉我是看了庭说之后才感觉是跑出来是有意思的。</li>
-<li>感觉自己搭梯子也腻了，还是机场比较稳固，而且速度也不错。走着看吧。</li>
-</ul>
+    <title>全面爆了</title>
+    <url>/2022/10/19/%E5%85%A8%E9%9D%A2%E7%88%86%E4%BA%86/</url>
+    <content><![CDATA[<p>在2022年的10月，终于裸奔、爆雷了。。</p>
 ]]></content>
-      <categories>
-        <category>番茄</category>
-      </categories>
-      <tags>
-        <tag>番茄</tag>
-      </tags>
   </entry>
   <entry>
     <title>关于开车</title>
@@ -424,32 +432,12 @@
       </tags>
   </entry>
   <entry>
-    <title>全面爆了</title>
-    <url>/2022/10/19/%E5%85%A8%E9%9D%A2%E7%88%86%E4%BA%86/</url>
-    <content><![CDATA[<p>在2022年的10月，终于裸奔、爆雷了。。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>彷徨</title>
     <url>/2021/03/10/%E5%BD%B7%E5%BE%A8/</url>
     <content><![CDATA[<p>终于，搞定NAS兼顾软路由的功能了，一下子把R2S给淘汰了，想想应该是蛮开心的一件事，但是却总有些失落。总感觉少了点什么，估计是这种“不务正业”让自己有点反感吧。把太多时间浪费在貌似没用的地方。<span id="more"></span></p>
 <p>事实上这也是我最愧疚的地方吧，总是在选择，没有坚定的做一件专业的事，不专心。更有选择的时候没有看长远，如果2011年的时候选择好的那家甲级设计院，又会是什么一个情形，你会觉得失去的才珍贵。从内心来说，当时是觉得害怕在大院里的竞争，自卑和不自信。其实还是很怀念刚毕业的时候的，那时候至少在专业学习能力方面是非常自信的，反而学了几年没怎么进步，又懒于学习了。所以，刚毕业上手很快，但是错失了继续提高的机会。太多太多的原因造成的了。今天，不知道应该是什么样的态度来看待当初的选择。</p>
 <p>女儿一天天长大，心理很着急，该怎么样去培养。昨天居然自己脱裤子大小便，还是在店里。不知道是她意识到了，还是纯粹是好玩，看到别人那样做，她是完成模仿。我就当她的意识到了，好好引导到厕所去吧。教她说话会不会是一个失误，我经常跟她说家乡话，老婆跟她说普通话，貌似她都听得懂，就是感觉不知道怎么说。希望没有什么大问题，关键是有时候她说家乡话，老婆听不懂，不知道她在说什么。其实我的想法是会不会家乡话都无所谓，只要听得懂就好了。今年又要辛苦老婆了，怎么想都没想到会碰到我这种人。我能感受到她的没有安全感，但是我的脾气超越了我的耐心，这有点想我爸的性格，煮熟的鸭子嘴硬。</p>
 <p>感觉脑子很胀，记得中学的时候都有感觉，很难得脑子是很清醒的，总感觉有一层什么东西把脑袋给围住一样，特别难受。其实我的愿望好简单，希望我们都好好的，我觉得需要我做什么都可以。不想这种迷茫的状态。</p>
-]]></content>
-      <categories>
-        <category>成长</category>
-      </categories>
-      <tags>
-        <tag>吐槽</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>混乱的一年</title>
-    <url>/2022/01/07/%E6%B7%B7%E4%B9%B1%E7%9A%84%E4%B8%80%E5%B9%B4/</url>
-    <content><![CDATA[<p>2021年悄然过去，感觉过的很快，又很慢，快是因为都2022了，慢是因为好像都不记得2020了。可能是因为2021经历了太多了吧，从5月份离开WD去AY，一直没有停下来过。</p>
-<p>特别是在浦北的几个月，一直都是在忙碌中，没有一点空闲的时间，那时候终于体会到做工程真的太累了，身体疲惫，内心煎熬，特别是当一家人不在一起，孩子还小的时候。我实在无法理解这样的生活，而且多少人是这样过的。换个角度来看，正是我这样的想法，所以做工程不适合我。明明已经很好，为什么还做这样的挑战。应该是不是最佳的时机，早几年或许完全是不一样的情况。没有那么多如果，人总是要经历一些挫折的，只是时间问题。</p>
-<p>这一年跨度实在有点大，设计-工程-运营，我都有点不知道在做什么了。在这样的年纪做那么大跨度的调整，回想起来都不可思议。遗憾的是时机不太合适，没有时间等我去成长。但是还是觉得很开心，这样的经历让我成长了很多很多，接触面广了，才理解房地产其中的奥妙好多好多。我始终相信一切都是美好的开始。再乱也不能怎么样，接受当下，一切的遇见都是美好！</p>
 ]]></content>
       <categories>
         <category>成长</category>
@@ -500,6 +488,24 @@
       </tags>
   </entry>
   <entry>
+    <title>混乱的一年</title>
+    <url>/2022/01/07/%E6%B7%B7%E4%B9%B1%E7%9A%84%E4%B8%80%E5%B9%B4/</url>
+    <content><![CDATA[<p>2021年悄然过去，感觉过的很快，又很慢，快是因为都2022了，慢是因为好像都不记得2020了。可能是因为2021经历了太多了吧，从5月份离开WD去AY，一直没有停下来过。</p>
+<span id="more"></span>
+
+<!--more-->
+
+<p>特别是在浦北的几个月，一直都是在忙碌中，没有一点空闲的时间，那时候终于体会到做工程真的太累了，身体疲惫，内心煎熬，特别是当一家人不在一起，孩子还小的时候。我实在无法理解这样的生活，而且多少人是这样过的。换个角度来看，正是我这样的想法，所以做工程不适合我。明明已经很好，为什么还做这样的挑战。应该是不是最佳的时机，早几年或许完全是不一样的情况。没有那么多如果，人总是要经历一些挫折的，只是时间问题。</p>
+<p>这一年跨度实在有点大，设计-工程-运营，我都有点不知道在做什么了。在这样的年纪做那么大跨度的调整，回想起来都不可思议。遗憾的是时机不太合适，没有时间等我去成长。但是还是觉得很开心，这样的经历让我成长了很多很多，接触面广了，才理解房地产其中的奥妙好多好多。我始终相信一切都是美好的开始。再乱也不能怎么样，接受当下，一切的遇见都是美好！</p>
+]]></content>
+      <categories>
+        <category>成长</category>
+      </categories>
+      <tags>
+        <tag>吐槽</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>足球</title>
     <url>/2021/01/24/%E8%B6%B3%E7%90%83/</url>
     <content><![CDATA[<p>足球应该是我最喜欢的运动的，还记得小学五年级快要毕业的时候，在操场上用篮球来踢，那算是第一次接触“足球”。也许这就是缘分，上了初一之后就开始踢球了。</p>
@@ -522,26 +528,6 @@
       </tags>
   </entry>
   <entry>
-    <title>运营一个月</title>
-    <url>/2021/11/24/%E8%BF%90%E8%90%A5%E4%B8%80%E4%B8%AA%E6%9C%88/</url>
-    <content><![CDATA[<p>​        转眼到运营已经一个月了，10月中旬的时候还想着终于可以回到设计了。工程真的太痛苦了，我没办法接受自己似乎没有办法照顾到一点点家里的工作。领导说做工程一年都没有回过家，把我给吓到了，这不是我想要的。那时候想想，设计真的太爽了。特别是在WD的时候，真的太轻松，抢了预售，抢了大商业出图，剩下就是周末双休，平时也没啥事，做结构设计多好。应该说是错过了转型的最佳时间吧。</p>
-<span id="more"></span>
-
-<p>​        后来就是阴差阳错，做设计没成，反而做了运营。其实是对运营没有任何概念，我所有的理解都是从《大运营》和《操盘》这两本书上来的，甚至这两本书都没有看完。或许只是了解了大运营究竟是什么一个概念，但是不知道到底平时要做什么，它需要达到的目的是什么，是不是所有的人都具备大运营的能力。</p>
-<p>​        就这样迷迷糊糊做了一个月，这一个月基本就是各种ppt，特别是刚开始的两个礼拜。新老大来，需要跟集团汇报，于是每个项目各种信息的收集，做成ppt汇报。好像比做工程还忙。然后就是各种基础数据的收集、整理。熬过了这个时间，迎来的就是区域调整，我的乖啊。。一个换了两个老大，又一轮PPT和汇报，频繁的变动更不知道应该做什么，更何况我这样一个新手。特别是又来一波优化，都知道明天是不是饭碗还有。幸运的是似乎已经稳定下来了。</p>
-<p>​       其实，我一直想做的就是完成基础数据的收集，这样自己至少对各个项目有了很基础的了解，但是不知道为什么公司系统就是不能够直接拿到，每次都是找项目的人去做，累人累己。我始终相信大运营是个好东西，不然不会那么多房企在推行，但是需要统一的思想，统一的口径，统一的操作平台，你需要的资料直接在基础数据库就能找到，而不是需要再去找各个项目的人去填写，不然，要大运营干嘛，只是给别人添加麻烦的么？</p>
-<p>​        我觉得我心态好就是因为乐观，我始终相信一切都是最好的安排，即使是现在行情那么差的情况下。没有什么是一成不变的，拥抱变化，一切都是最美好的开始。6个月期间，从设计到工程到运营，也不例外，不少么？</p>
-]]></content>
-      <categories>
-        <category>设计</category>
-      </categories>
-      <tags>
-        <tag>设计</tag>
-        <tag>运营</tag>
-        <tag>工程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>陪伴让我们共同成长</title>
     <url>/2021/01/25/%E9%99%AA%E4%BC%B4%E8%AE%A9%E6%88%91%E4%BB%AC%E5%85%B1%E5%90%8C%E6%88%90%E9%95%BF/</url>
     <content><![CDATA[<p>快半个多月了，周末都是阴天又冷，都没办法出门，这周总算可以出去了，带女儿出去玩。家人待在一起的感觉真好，其中会增加很多的思考，究竟我们需要什么。不应该是等着生活来催我们去做什么，得计划着去做什么。变被动为主动，心里的压力就会小一些。孩子的成长需要我们的陪伴，其实也是我们自己在成长，第一次做父母，谁知道会是怎么样的？但求孩子健康成长。</p>
@@ -561,6 +547,26 @@
       <tags>
         <tag>成长</tag>
         <tag>家庭</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>运营一个月</title>
+    <url>/2021/11/24/%E8%BF%90%E8%90%A5%E4%B8%80%E4%B8%AA%E6%9C%88/</url>
+    <content><![CDATA[<p>​        转眼到运营已经一个月了，10月中旬的时候还想着终于可以回到设计了。工程真的太痛苦了，我没办法接受自己似乎没有办法照顾到一点点家里的工作。领导说做工程一年都没有回过家，把我给吓到了，这不是我想要的。那时候想想，设计真的太爽了。特别是在WD的时候，真的太轻松，抢了预售，抢了大商业出图，剩下就是周末双休，平时也没啥事，做结构设计多好。应该说是错过了转型的最佳时间吧。</p>
+<span id="more"></span>
+
+<p>​        后来就是阴差阳错，做设计没成，反而做了运营。其实是对运营没有任何概念，我所有的理解都是从《大运营》和《操盘》这两本书上来的，甚至这两本书都没有看完。或许只是了解了大运营究竟是什么一个概念，但是不知道到底平时要做什么，它需要达到的目的是什么，是不是所有的人都具备大运营的能力。</p>
+<p>​        就这样迷迷糊糊做了一个月，这一个月基本就是各种ppt，特别是刚开始的两个礼拜。新老大来，需要跟集团汇报，于是每个项目各种信息的收集，做成ppt汇报。好像比做工程还忙。然后就是各种基础数据的收集、整理。熬过了这个时间，迎来的就是区域调整，我的乖啊。。一个换了两个老大，又一轮PPT和汇报，频繁的变动更不知道应该做什么，更何况我这样一个新手。特别是又来一波优化，都知道明天是不是饭碗还有。幸运的是似乎已经稳定下来了。</p>
+<p>​       其实，我一直想做的就是完成基础数据的收集，这样自己至少对各个项目有了很基础的了解，但是不知道为什么公司系统就是不能够直接拿到，每次都是找项目的人去做，累人累己。我始终相信大运营是个好东西，不然不会那么多房企在推行，但是需要统一的思想，统一的口径，统一的操作平台，你需要的资料直接在基础数据库就能找到，而不是需要再去找各个项目的人去填写，不然，要大运营干嘛，只是给别人添加麻烦的么？</p>
+<p>​        我觉得我心态好就是因为乐观，我始终相信一切都是最好的安排，即使是现在行情那么差的情况下。没有什么是一成不变的，拥抱变化，一切都是最美好的开始。6个月期间，从设计到工程到运营，也不例外，不少么？</p>
+]]></content>
+      <categories>
+        <category>设计</category>
+      </categories>
+      <tags>
+        <tag>设计</tag>
+        <tag>运营</tag>
+        <tag>工程</tag>
       </tags>
   </entry>
 </search>
